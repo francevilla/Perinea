@@ -1,8 +1,9 @@
+import Link from "next/link";
 import type { Metadata } from "next";
 import { site } from "@/lib/site";
 import CtaBanner from "@/components/cta-banner";
 import SectionHeading from "@/components/section-heading";
-import { IconCheck } from "@/components/icons";
+import { IconCheck, IconPhone } from "@/components/icons";
 
 export const metadata: Metadata = {
   title: "Chi sono",
@@ -72,8 +73,51 @@ export default function ChiSiamoPage() {
         <SectionHeading
           eyebrow="Chi sono"
           title="Il mio percorso, la mia passione"
-          description="Mi chiamo Isabel Lombardini e da oltre quindici anni accompagno le donne nei momenti più importanti della loro vita: la gravidanza, il parto e il ritorno al benessere."
         />
+      </section>
+
+      <section className="container-site pt-8 sm:pt-10">
+        <div className="card grid items-center gap-8 p-6 sm:p-10 lg:grid-cols-[minmax(0,400px)_1fr] lg:gap-12">
+          <div className="mx-auto max-w-xs lg:max-w-none">
+            <img
+              src="/images/Perinea2.jpeg"
+              alt="Ritratto professionale della Dott.ssa Isabel Lombardini"
+              className="aspect-[4/5] w-full rounded-3xl object-cover shadow-soft"
+            />
+          </div>
+          <div>
+            <p className="eyebrow">Ostetrica · Salute pelvica della donna</p>
+            <h2 className="mt-3 font-serif text-3xl font-semibold text-sage-900 sm:text-4xl">
+              Dott.ssa Isabel Lombardini
+            </h2>
+            <p className="mt-5 text-base leading-relaxed text-ink/75">
+              Sono ostetrica da oltre 15 anni, con esperienza tra ospedale e
+              ASL: dall&apos;Ospedale &laquo;Infermi&raquo; di Rimini al
+              Sant&apos;Orsola-Malpighi di Bologna e alla Casa della Salute di
+              San Lazzaro, dove ho seguito gravidanze fisiologiche,
+              allattamento e corsi di preparazione alla nascita. Nel 2025 ho
+              conseguito con 30/30 la specializzazione come ostetrica esperta
+              in salute pelvica della donna, rieducazione post-parto e
+              riabilitazione del pavimento pelvico femminile.
+            </p>
+            <p className="mt-4 text-base leading-relaxed text-ink/75">
+              {site.bookingNote} Ricevo presso Native Medica in Via Bazzanese
+              32/4 a Casalecchio di Reno e in Via Emilia 239 a San Lazzaro di
+              Savena, su appuntamento, per percorsi di rieducazione del
+              pavimento pelvico, visite ostetriche a basso rischio e sostegno
+              all&apos;allattamento.
+            </p>
+            <div className="mt-8 flex flex-wrap gap-4">
+              <a href={site.phoneHref} className="btn-primary">
+                <IconPhone className="h-4 w-4" />
+                Chiamami · {site.phone}
+              </a>
+              <Link href="/contatti" className="btn-outline">
+                Contattami
+              </Link>
+            </div>
+          </div>
+        </div>
       </section>
 
       <section className="container-site grid gap-10 py-14 sm:py-20 lg:grid-cols-3">
@@ -127,8 +171,9 @@ export default function ChiSiamoPage() {
           <div className="rounded-3xl bg-sage-800 p-7 text-cream">
             <p className="eyebrow text-terracotta-300">La mia filosofia</p>
             <p className="mt-4 font-serif text-xl italic leading-relaxed">
-              «Credo in un'ostetricia di prossimità: il tuo corpo conosce già
-              come fare, il mio lavoro è darti informazioni, fiducia e tempo.»
+              «Credo in un&apos;ostetricia di prossimità: il tuo corpo conosce
+              già come fare, il mio lavoro è darti informazioni, fiducia e
+              tempo.»
             </p>
           </div>
         </aside>
