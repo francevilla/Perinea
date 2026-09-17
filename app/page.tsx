@@ -104,7 +104,7 @@ export default function HomePage() {
             />
             <img
               src="/images/Perinea2.jpeg"
-              alt="Bella incinta cullata con cura, luce morbida e toni caldi"
+              alt="Dott.ssa Isabel Lombardini, ostetrica — ritratto professionale"
               className="relative aspect-[4/5] w-full rounded-[2.5rem] object-cover shadow-soft"
             />
             <div className="absolute -bottom-5 left-6 rounded-2xl bg-white/95 px-5 py-3.5 shadow-soft ring-1 ring-sage-900/5 backdrop-blur sm:left-10">
