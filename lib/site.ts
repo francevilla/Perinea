@@ -10,7 +10,8 @@ export type Address = {
 export const site = {
   name: "Perinea",
   url:
-    process.env.NEXT_PUBLIC_SITE_URL ?? "https://perinea-ashy.vercel.app",
+    process.env.NEXT_PUBLIC_SITE_URL?.trim() ||
+    "https://perinea-ashy.vercel.app",
   doctorName: "Isabel Lombardini",
   doctorFullName: "Dott.ssa Isabel Lombardini",
   role: "Ostetrica",

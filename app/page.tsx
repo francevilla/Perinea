@@ -103,7 +103,7 @@ export default function HomePage() {
               className="absolute -left-4 -top-4 h-full w-full rounded-[2.5rem] bg-sand sm:-left-6 sm:-top-6"
             />
             <img
-              src="/images/Perinea2.jpeg"
+              src="/images/Isabel.jpeg"
               alt="Dott.ssa Isabel Lombardini, ostetrica — ritratto professionale"
               className="relative aspect-[4/5] w-full rounded-[2.5rem] object-cover shadow-soft"
             />
