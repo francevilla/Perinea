@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 520 110" role="img" aria-label="Perinea — lockup orizzontale, ostetrica, salute pelvica">
+  <!-- Concept A «Il Bacino» — lockup orizzontale su fondo chiaro.
+       Nota: per lo stampato/schede social vettorializzare il testo (tracciati). -->
+  <g>
+    <path d="M13 24 C13 45 23 56 32 56 C41 56 51 45 51 24" fill="none" stroke="#41563F" stroke-width="7" stroke-linecap="round" transform="translate(4,17)"/>
+    <circle cx="36" cy="54" r="7.5" fill="#C07A5E"/>
+  </g>
+  <text x="88" y="66" font-family="'Cormorant Garamond', Georgia, 'Times New Roman', serif" font-size="56" font-weight="600" fill="#2F3C2D">Perinea<tspan fill="#C07A5E">.</tspan></text>
+  <text x="91" y="94" font-family="Helvetica, Arial, sans-serif" font-size="12" letter-spacing="4" fill="#4E6A4D">OSTETRICA · SALUTE PELVICA</text>
+</svg>

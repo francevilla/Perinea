@@ -31,6 +31,21 @@ export const metadata: Metadata = {
     siteName: "Perinea",
     locale: "it_IT",
     type: "website",
+    images: [
+      {
+        url: "/images/og-image.png",
+        width: 1200,
+        height: 630,
+        alt: "Perinea — Dott.ssa Isabel Lombardini, ostetrica, salute pelvica della donna",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Perinea · Dott.ssa Isabel Lombardini, Ostetrica",
+    description:
+      "Riabilitazione del pavimento pelvico, ostetricia, allattamento e corsi pre-parto a Casalecchio di Reno e San Lazzaro di Savena.",
+    images: ["/images/og-image.png"],
   },
   icons: {
     icon: "/images/favicon.svg",
