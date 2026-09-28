@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630" role="img" aria-label="Perinea — Dott.ssa Isabel Lombardini, ostetrica">
+  <!-- Open Graph card 1200×630 — Concept A «Il Bacino», versione su fondo scuro -->
+  <rect width="1200" height="630" fill="#2F3C2D"/>
+  <circle cx="1150" cy="40" r="260" fill="#C07A5E" fill-opacity="0.13"/>
+  <circle cx="40" cy="620" r="230" fill="#62805F" fill-opacity="0.20"/>
+
+  <!-- Mark centrato (centro ottico a 600,150) -->
+  <g transform="translate(600 150) scale(2.1) translate(-32 -40)">
+    <path d="M13 24 C13 45 23 56 32 56 C41 56 51 45 51 24" fill="none" stroke="#FAF6F0" stroke-width="7" stroke-linecap="round"/>
+    <circle cx="32" cy="37" r="7.5" fill="#D48E6D"/>
+  </g>
+
+  <!-- Wordmark -->
+  <text x="600" y="330" text-anchor="middle" font-family="'Cormorant Garamond', Georgia, 'Times New Roman', serif" font-size="112" font-weight="600" fill="#FAF6F0">Perinea<tspan fill="#D48E6D">.</tspan></text>
+
+  <!-- Descriptor -->
+  <text x="600" y="382" text-anchor="middle" font-family="Helvetica, Arial, sans-serif" font-size="24" letter-spacing="7" fill="#A3B9A0">OSTETRICA · SALUTE PELVICA DELLA DONNA</text>
+
+  <!-- Tagline -->
+  <text x="600" y="468" text-anchor="middle" font-family="Helvetica, Arial, sans-serif" font-size="30" fill="#C7C8BF">Al fianco delle donne, dalla gravidanza al benessere pelvico.</text>
+
+  <!-- Professionista e sedi -->
+  <text x="600" y="545" text-anchor="middle" font-family="Helvetica, Arial, sans-serif" font-size="22" fill="#A9ACA2">Dott.ssa Isabel Lombardini · Clinica Native Medica — Casalecchio di Reno · San Lazzaro di Savena (BO)</text>
+</svg>

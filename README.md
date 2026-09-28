@@ -31,7 +31,14 @@ app/            # pagine (layout, home, chi-siamo, servizi, contatti)
 components/     # header, footer, card, icone, modulo contatti
 lib/            # dati del sito (site.ts) e listino servizi (services.ts)
 public/images/  # immagini
+docs/           # studio di brand, formato e logo su base scientifica
+brand/logo/     # concept di logo (SVG, board di presentazione)
 ```
+
+## Documentazione di marca
+
+- [`docs/studio-design-scientifico.md`](docs/studio-design-scientifico.md) — audit del brand, specifica del formato, tre concept di logo e lo studio scientifico (marketing science e neuroscienze) che fonda ogni scelta, con livelli di evidenza e bibliografia verificata.
+- Concept logo: `brand/logo/concept-a-bacino.svg` (raccomandato), `concept-b-goccia.svg`, `concept-c-grembo.svg`.
 
 ## Configurazione
 

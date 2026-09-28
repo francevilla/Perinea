@@ -1,0 +1,48 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 540" role="img" aria-label="Concept A — Il Bacino: logo Perinea">
+  <defs>
+    <g id="markA">
+      <path d="M13 24 C13 45 23 56 32 56 C41 56 51 45 51 24" fill="none" stroke="#41563F" stroke-width="7" stroke-linecap="round"/>
+      <circle cx="32" cy="37" r="7.5" fill="#C07A5E"/>
+    </g>
+    <g id="markA-rev">
+      <path d="M13 24 C13 45 23 56 32 56 C41 56 51 45 51 24" fill="none" stroke="#FAF6F0" stroke-width="7" stroke-linecap="round"/>
+      <circle cx="32" cy="37" r="7.5" fill="#D48E6D"/>
+    </g>
+  </defs>
+
+  <rect width="960" height="540" fill="#FAF6F0"/>
+
+  <text x="48" y="64" font-family="'Cormorant Garamond', Georgia, 'Times New Roman', serif" font-size="30" font-weight="600" fill="#2F3C2D">Concept A — «Il Bacino»</text>
+  <text x="48" y="92" font-family="Helvetica, Arial, sans-serif" font-size="12" letter-spacing="3" fill="#8C5340">PERINEA · STUDIO DI LOGO · SOSTEGNO · CURA · NUCLEO</text>
+
+  <!-- Mark card -->
+  <rect x="48" y="120" width="300" height="300" rx="32" fill="#FFFFFF" stroke="#E1E9E0"/>
+  <use href="#markA" transform="translate(113,151) scale(4)"/>
+
+  <!-- Horizontal lockup -->
+  <text x="392" y="176" font-family="Helvetica, Arial, sans-serif" font-size="11" letter-spacing="3" fill="#4E6A4D">LOCKUP ORIZZONTALE</text>
+  <g transform="translate(392,204)">
+    <use href="#markA" transform="scale(1.4)"/>
+    <text x="104" y="46" font-family="'Cormorant Garamond', Georgia, 'Times New Roman', serif" font-size="54" font-weight="600" fill="#2F3C2D">Perinea<tspan fill="#C07A5E">.</tspan></text>
+    <text x="107" y="74" font-family="Helvetica, Arial, sans-serif" font-size="12" letter-spacing="4" fill="#4E6A4D">OSTETRICA · SALUTE PELVICA</text>
+  </g>
+
+  <!-- Reverse lockup on dark -->
+  <text x="392" y="336" font-family="Helvetica, Arial, sans-serif" font-size="11" letter-spacing="3" fill="#4E6A4D">VERSIONE SU FONDO SCURO</text>
+  <rect x="392" y="352" width="520" height="88" rx="24" fill="#2F3C2D"/>
+  <g transform="translate(416,370)">
+    <use href="#markA-rev" transform="scale(0.85)"/>
+    <text x="76" y="42" font-family="'Cormorant Garamond', Georgia, 'Times New Roman', serif" font-size="42" font-weight="600" fill="#FAF6F0">Perinea<tspan fill="#D48E6D">.</tspan></text>
+  </g>
+
+  <!-- Scale test -->
+  <text x="48" y="464" font-family="Helvetica, Arial, sans-serif" font-size="11" letter-spacing="3" fill="#4E6A4D">TEST DI SCALA — 64 / 32 / 16 px (FAVICICON)</text>
+  <circle cx="86" cy="504" r="36" fill="#FFFFFF" stroke="#E1E9E0"/>
+  <use href="#markA" transform="translate(54,472) scale(1)"/>
+  <circle cx="178" cy="504" r="28" fill="#FFFFFF" stroke="#E1E9E0"/>
+  <use href="#markA" transform="translate(154,480) scale(0.75)"/>
+  <circle cx="254" cy="504" r="22" fill="#FFFFFF" stroke="#E1E9E0"/>
+  <use href="#markA" transform="translate(236,486) scale(0.56)"/>
+
+  <text x="392" y="504" font-family="Helvetica, Arial, sans-serif" font-size="12" fill="#6A6E66">Arco portante (pavimento pelvico) + nucleo (centro, seme, individualità).</text>
+</svg>

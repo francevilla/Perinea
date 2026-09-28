@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { navLinks, site } from "@/lib/site";
+import { LogoMark } from "./logo";
 import { IconMapPin, IconPhone, IconWhatsApp } from "./icons";
 
 export default function Footer() {
@@ -9,9 +10,12 @@ export default function Footer() {
     <footer className="bg-sage-900 text-cream">
       <div className="container-site grid gap-10 py-14 sm:grid-cols-2 lg:grid-cols-4">
         <div className="lg:col-span-2">
-          <p className="font-serif text-3xl font-semibold tracking-wide">
-            Perinea<span className="text-terracotta-400">.</span>
-          </p>
+          <div className="flex items-center gap-3">
+            <LogoMark variant="dark" className="h-11 w-11 shrink-0" />
+            <p className="font-serif text-3xl font-semibold tracking-wide">
+              Perinea<span className="text-terracotta-400">.</span>
+            </p>
+          </div>
           <p className="mt-2 text-sm font-semibold text-sage-200">
             {site.doctorFullName} · {site.role}
           </p>

@@ -4,6 +4,7 @@ import { useEffect, useState } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { navLinks, site } from "@/lib/site";
+import { LogoMark } from "./logo";
 import { IconMenu, IconPhone, IconX } from "./icons";
 
 export default function Header() {
@@ -29,11 +30,11 @@ export default function Header() {
       }`}
     >
       <div className="container-site flex h-16 items-center justify-between sm:h-20">
-        <Link
-          href="/"
-          className="font-serif text-2xl font-semibold tracking-wide text-sage-800 sm:text-3xl"
-        >
-          Perinea<span className="text-terracotta-500">.</span>
+        <Link href="/" className="flex items-center gap-2.5">
+          <LogoMark className="h-9 w-9 shrink-0 sm:h-11 sm:w-11" />
+          <span className="font-serif text-2xl font-semibold tracking-wide text-sage-800 sm:text-3xl">
+            Perinea<span className="text-terracotta-500">.</span>
+          </span>
         </Link>
 
         <nav className="hidden items-center gap-8 md:flex">
