@@ -6,6 +6,7 @@ import { IconClock, IconSparkles } from "@/components/icons";
 
 export const metadata: Metadata = {
   title: "Servizi",
+  alternates: { canonical: "/servizi" },
   description:
     "Riabilitazione del pavimento pelvico, visite ostetriche, allattamento, Pap test e corsi pre-parto di coppia con Dott.ssa Isabel Lombardini a Casalecchio di Reno e San Lazzaro di Savena.",
 };
@@ -19,6 +20,21 @@ export default function ServiziPage() {
           title="Prendersi cura di te, con il percorso giusto"
           description="Ogni percorso inizia con un colloquio: capiamo insieme obiettivi, tempi e aspettative, poi definiamo il piano che fa per te."
         />
+      </section>
+
+      <section id="prima-visita" className="container-site scroll-mt-24 pt-10">
+        <div className="rounded-3xl bg-sand/80 p-6 sm:p-8">
+          <h2 className="font-serif text-2xl font-semibold text-sage-900">
+            Cosa aspettarti dal primo appuntamento
+          </h2>
+          <p className="mt-3 max-w-3xl text-sm leading-relaxed text-ink/75 sm:text-base">
+            Il primo colloquio dura indicativamente circa un’ora. Partiamo
+            dalla tua storia e dalle tue domande; se pertinente, concordiamo
+            una valutazione e definiamo insieme obiettivi e possibili passi
+            successivi. Puoi chiedere informazioni prima di decidere se
+            iniziare un percorso.
+          </p>
+        </div>
       </section>
 
       <section className="container-site space-y-10 py-14 sm:py-20">
@@ -77,9 +93,9 @@ export default function ServiziPage() {
             </h3>
             <p className="mt-3 text-sm leading-relaxed text-ink/70 sm:text-base">
               Il VTONE è un sistema di biofeedback e stimolazione pelvica
-              non invasiva: rende «visibile» il lavoro del pavimento pelvico e
-              permette di calibrare ogni seduta sul tuo punto di partenza. Il
-              risultato: un percorso più veloce, misurabile e su misura.
+              non invasiva e può aiutare a osservare l&apos;attività muscolare.
+              Indicazione e modalità vengono valutate insieme, in base alla
+              situazione individuale.
             </p>
           </div>
           <div className="rounded-3xl bg-sand/80 p-7 sm:p-9">
@@ -108,3 +124,4 @@ export default function ServiziPage() {
     </>
   );
 }
+

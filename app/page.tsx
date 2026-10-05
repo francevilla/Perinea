@@ -1,9 +1,15 @@
 import Link from "next/link";
+import Image from "next/image";
 import { site } from "@/lib/site";
 import CtaBanner from "@/components/cta-banner";
 import SectionHeading from "@/components/section-heading";
 import ServiceCard from "@/components/service-card";
-import { IconArrowRight, IconCheck, IconPhone } from "@/components/icons";
+import {
+  IconArrowRight,
+  IconCheck,
+  IconPhone,
+  IconWhatsApp,
+} from "@/components/icons";
 
 const highlights = [
   {
@@ -12,8 +18,7 @@ const highlights = [
   },
   {
     value: "30/30",
-    label:
-      "Specializzazione in salute pelvica, rieducazione post-parto e pavimento pelvico",
+    label: "Votazione nella specializzazione in salute pelvica · 2025",
   },
   {
     value: "VTONE",
@@ -70,28 +75,28 @@ export default function HomePage() {
               {site.doctorFullName} · {site.role}
             </p>
             <h1 className="mt-4 font-serif text-4xl font-semibold leading-tight text-sage-900 sm:text-5xl lg:text-[3.4rem]">
-              Al fianco della donna,{" "}
-              <span className="italic text-terracotta-600">
-                dalla gravidanza
-              </span>{" "}
-              al benessere pelvico
+              Salute pelvica e assistenza ostetrica, con te in ogni fase
             </h1>
             <p className="mt-6 max-w-xl text-base leading-relaxed text-ink/75 sm:text-lg">
-              Ostetrica con oltre quindici anni di esperienza tra ospedale e
-              ASL, dal 2025 sono{" "}
+              Sono la Dott.ssa Isabel Lombardini, ostetrica con oltre
+              quindici anni di esperienza tra ospedale e ASL. Nel 2025 ho
+              conseguito il titolo di ostetrica{" "}
               <strong className="font-bold text-sage-900">
                 esperta in salute pelvica della donna
               </strong>
-              . Ti accompagno in gravidanza, al parto e dopo, con attenzione
-              e competenza.
+              . Ricevo a Casalecchio di Reno e San Lazzaro di Savena.
             </p>
             <div className="mt-8 flex flex-wrap gap-4">
-              <a href={site.phoneHref} className="btn-primary">
-                <IconPhone className="h-4 w-4" />
-                Chiamami · {site.phone}
+              <a href={site.whatsappHref} className="btn-accent">
+                <IconWhatsApp className="h-4 w-4" />
+                Scrivimi su WhatsApp
               </a>
-              <Link href="/servizi" className="btn-outline">
-                Scopri i servizi
+              <a href={site.phoneHref} className="btn-outline">
+                <IconPhone className="h-4 w-4" />
+                {site.phone}
+              </a>
+              <Link href="/servizi#prima-visita" className="btn-outline">
+                Come funziona la prima visita
                 <IconArrowRight className="h-4 w-4" />
               </Link>
             </div>
@@ -102,8 +107,12 @@ export default function HomePage() {
               aria-hidden="true"
               className="absolute -left-4 -top-4 h-full w-full rounded-[2.5rem] bg-sand sm:-left-6 sm:-top-6"
             />
-            <img
+            <Image
               src="/images/Isabel.jpeg"
+              width={768}
+              height={1024}
+              priority
+              sizes="(max-width: 1024px) 100vw, 50vw"
               alt="Dott.ssa Isabel Lombardini, ostetrica — ritratto professionale"
               className="relative aspect-[4/5] w-full rounded-[2.5rem] object-cover shadow-soft"
             />
@@ -135,6 +144,48 @@ export default function HomePage() {
         </div>
       </section>
 
+      <section id="prima-visita" className="container-site scroll-mt-24 py-16 sm:py-20">
+        <SectionHeading
+          eyebrow="La prima visita"
+          title="Un primo incontro per capire insieme da dove partire"
+          description="Hai tempo per raccontare cosa ti porta qui, fare domande e concordare i prossimi passi con chiarezza."
+        />
+        <ol className="mt-10 grid gap-5 sm:grid-cols-3">
+          {[
+            {
+              number: "01",
+              title: "Ci conosciamo",
+              text: "Mi racconti cosa ti porta qui; ascolto le tue esigenze e le tue domande.",
+            },
+            {
+              number: "02",
+              title: "Valutiamo insieme",
+              text: "In base al motivo della visita, concordiamo la valutazione più adatta e i suoi obiettivi.",
+            },
+            {
+              number: "03",
+              title: "Definiamo i prossimi passi",
+              text: "Ti spiego le possibilità e scegliamo insieme come proseguire, senza impegno a iniziare un percorso.",
+            },
+          ].map((step) => (
+            <li key={step.number} className="card p-6 sm:p-7">
+              <p className="font-serif text-3xl font-semibold text-terracotta-600">
+                {step.number}
+              </p>
+              <h3 className="mt-3 font-serif text-xl font-semibold text-sage-900">
+                {step.title}
+              </h3>
+              <p className="mt-2 text-sm leading-relaxed text-ink/70">{step.text}</p>
+            </li>
+          ))}
+        </ol>
+        <p className="mx-auto mt-5 max-w-3xl text-center text-sm leading-relaxed text-ink/60">
+          La durata indicativa del primo colloquio è di circa un’ora. La
+          valutazione e gli eventuali trattamenti vengono concordati in base
+          alla tua situazione.
+        </p>
+      </section>
+
       {/* Services */}
       <section className="container-site py-16 sm:py-24">
         <SectionHeading
@@ -163,8 +214,11 @@ export default function HomePage() {
               aria-hidden="true"
               className="absolute -bottom-4 -right-4 h-full w-full rounded-[2.5rem] bg-sage-100 sm:-bottom-6 sm:-right-6"
             />
-            <img
+            <Image
               src="/images/gravidanza.jpg"
+              width={1408}
+              height={768}
+              sizes="(max-width: 1024px) 100vw, 50vw"
               alt="Mani di una coppia in attesa, luce naturale e toni caldi"
               className="relative aspect-[4/3] w-full rounded-[2.5rem] object-cover shadow-soft"
             />
@@ -233,8 +287,11 @@ export default function HomePage() {
             </p>
           </div>
           <div className="relative mx-auto w-full max-w-lg lg:max-w-none">
-            <img
+            <Image
               src="/images/pavimento-pelvico.jpg"
+              width={1408}
+              height={768}
+              sizes="(max-width: 1024px) 100vw, 50vw"
               alt="Illustrazione della zona pelvica della donna, stile morbido e botanico"
               className="aspect-square w-full rounded-[2.5rem] object-cover shadow-soft"
             />
@@ -246,3 +303,4 @@ export default function HomePage() {
     </>
   );
 }
+

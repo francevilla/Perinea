@@ -27,6 +27,7 @@ export default function AddressCard({ address }: AddressCardProps) {
         href={address.mapUrl}
         target="_blank"
         rel="noreferrer"
+        aria-label={`Apri la mappa per ${address.city}`}
         className="inline-flex shrink-0 items-center gap-1.5 rounded-full border border-sage-300 px-4 py-2 text-xs font-bold text-sage-800 transition hover:bg-sage-700 hover:text-cream"
       >
         Mappa
@@ -35,3 +36,4 @@ export default function AddressCard({ address }: AddressCardProps) {
     </div>
   );
 }
+

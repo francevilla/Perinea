@@ -11,6 +11,7 @@ import {
 
 export const metadata: Metadata = {
   title: "Contatti",
+  alternates: { canonical: "/contatti" },
   description:
     "Contatta la Dott.ssa Isabel Lombardini: telefono, WhatsApp e recapiti della clinica Native Medica a Casalecchio di Reno e San Lazzaro di Savena.",
 };
@@ -69,8 +70,17 @@ export default function ContattiPage() {
           </div>
         </div>
 
-        <ContactForm />
+        <div>
+          <ContactForm />
+          <p className="mt-4 px-2 text-xs leading-relaxed text-ink/60">
+            Il modulo non invia né archivia il messaggio sul sito. Dopo averlo
+            preparato, si apre WhatsApp: potrai rileggerlo e inviarlo tu. Per
+            proteggere la tua riservatezza, evita di inserire dettagli sanitari
+            non necessari.
+          </p>
+        </div>
       </section>
     </>
   );
 }
+

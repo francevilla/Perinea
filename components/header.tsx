@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { navLinks, site } from "@/lib/site";
@@ -11,6 +11,7 @@ export default function Header() {
   const pathname = usePathname();
   const [open, setOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const menuButtonRef = useRef<HTMLButtonElement>(null);
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 8);
@@ -22,6 +23,18 @@ export default function Header() {
   useEffect(() => {
     setOpen(false);
   }, [pathname]);
+
+  useEffect(() => {
+    if (!open) return;
+    const onKeyDown = (event: KeyboardEvent) => {
+      if (event.key === "Escape") {
+        setOpen(false);
+        menuButtonRef.current?.focus();
+      }
+    };
+    window.addEventListener("keydown", onKeyDown);
+    return () => window.removeEventListener("keydown", onKeyDown);
+  }, [open]);
 
   return (
     <header
@@ -47,6 +60,7 @@ export default function Header() {
                   ? "text-terracotta-600"
                   : "text-ink/75"
               }`}
+              aria-current={pathname === link.href ? "page" : undefined}
             >
               {link.label}
             </Link>
@@ -61,11 +75,13 @@ export default function Header() {
         </nav>
 
         <button
+          ref={menuButtonRef}
           type="button"
           onClick={() => setOpen((v) => !v)}
           className="inline-flex h-11 w-11 items-center justify-center rounded-full text-sage-800 transition hover:bg-sage-100 md:hidden"
           aria-label={open ? "Chiudi menu" : "Apri menu"}
           aria-expanded={open}
+          aria-controls="mobile-navigation"
         >
           {open ? (
             <IconX className="h-6 w-6" />
@@ -75,33 +91,36 @@ export default function Header() {
         </button>
       </div>
 
-      {open && (
-        <nav className="border-t border-sage-900/10 bg-cream px-5 pb-6 pt-3 md:hidden">
-          <ul className="space-y-1">
-            {navLinks.map((link) => (
-              <li key={link.href}>
-                <Link
-                  href={link.href}
-                  className={`block rounded-xl px-4 py-3 text-base font-semibold transition ${
-                    pathname === link.href
-                      ? "bg-sage-100 text-sage-900"
-                      : "text-ink/80 hover:bg-sage-50"
-                  }`}
-                >
-                  {link.label}
-                </Link>
-              </li>
-            ))}
-          </ul>
-          <a
-            href={site.phoneHref}
-            className="mt-4 inline-flex w-full items-center justify-center gap-2 rounded-full bg-sage-700 px-5 py-3 text-sm font-bold text-cream"
-          >
-            <IconPhone className="h-4 w-4" />
-            Chiamami · {site.phone}
-          </a>
-        </nav>
-      )}
+      <nav
+        id="mobile-navigation"
+        className={`${open ? "block" : "hidden"} border-t border-sage-900/10 bg-cream px-5 pb-6 pt-3 md:hidden`}
+      >
+        <ul className="space-y-1">
+          {navLinks.map((link) => (
+            <li key={link.href}>
+              <Link
+                href={link.href}
+                className={`block rounded-xl px-4 py-3 text-base font-semibold transition ${
+                  pathname === link.href
+                    ? "bg-sage-100 text-sage-900"
+                    : "text-ink/80 hover:bg-sage-50"
+                }`}
+                aria-current={pathname === link.href ? "page" : undefined}
+              >
+                {link.label}
+              </Link>
+            </li>
+          ))}
+        </ul>
+        <a
+          href={site.phoneHref}
+          className="mt-4 inline-flex w-full items-center justify-center gap-2 rounded-full bg-sage-700 px-5 py-3 text-sm font-bold text-cream"
+        >
+          <IconPhone className="h-4 w-4" />
+          Chiamami · {site.phone}
+        </a>
+      </nav>
     </header>
   );
 }
+

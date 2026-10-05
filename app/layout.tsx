@@ -50,7 +50,30 @@ export const metadata: Metadata = {
   icons: {
     icon: "/images/favicon.svg",
   },
+  alternates: { canonical: "/" },
 };
+
+const structuredData = JSON.stringify({
+  "@context": "https://schema.org",
+  "@type": "MedicalBusiness",
+  name: `${site.doctorFullName} · ${site.role}`,
+  url: site.url,
+  telephone: site.phoneHref.replace("tel:", ""),
+  description: site.specialization,
+  address: site.addresses.map((address) => ({
+    "@type": "PostalAddress",
+    streetAddress: address.street,
+    addressLocality: address.city.replace(/\s*\(BO\)$/, ""),
+    postalCode: address.cap,
+    addressCountry: "IT",
+  })),
+  availableService: [
+    "Riabilitazione del pavimento pelvico",
+    "Visite ostetriche per gravidanze a basso rischio",
+    "Consulenza allattamento",
+    "Corsi pre-parto di coppia",
+  ],
+}).replace(/</g, "\\u003c");
 
 export default function RootLayout({
   children,
@@ -60,6 +83,10 @@ export default function RootLayout({
   return (
     <html lang="it">
       <body className="flex min-h-screen flex-col">
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: structuredData }}
+        />
         <Header />
         <main className="flex-1">{children}</main>
         <Footer />
@@ -67,3 +94,4 @@ export default function RootLayout({
     </html>
   );
 }
+
