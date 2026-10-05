@@ -7,6 +7,26 @@
     scroll-behavior: smooth;
   }
 
+  :focus-visible {
+    outline: 3px solid #8c5340;
+    outline-offset: 3px;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    html {
+      scroll-behavior: auto;
+    }
+
+    *,
+    *::before,
+    *::after {
+      scroll-behavior: auto !important;
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+    }
+  }
+
   body {
     @apply bg-cream font-sans text-ink antialiased;
   }
@@ -30,7 +50,7 @@
   }
 
   .btn-accent {
-    @apply inline-flex items-center justify-center gap-2 rounded-full bg-terracotta-500 px-6 py-3 text-sm font-bold text-white transition-all duration-200 hover:bg-terracotta-600 hover:shadow-soft;
+    @apply inline-flex items-center justify-center gap-2 rounded-full bg-terracotta-700 px-6 py-3 text-sm font-bold text-white transition-all duration-200 hover:bg-terracotta-800 hover:shadow-soft;
   }
 
   .btn-outline {
@@ -45,3 +65,4 @@
     @apply rounded-3xl bg-white shadow-sm ring-1 ring-sage-900/5;
   }
 }
+

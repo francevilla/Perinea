@@ -8,7 +8,8 @@ export default function ContactForm() {
   const [name, setName] = useState("");
   const [phone, setPhone] = useState("");
   const [message, setMessage] = useState("");
-  const [sent, setSent] = useState(false);
+  const [chatOpened, setChatOpened] = useState(false);
+  const [chatUrl, setChatUrl] = useState("");
 
   const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
@@ -17,12 +18,15 @@ export default function ContactForm() {
     );
     if (phone) lines.push("", `Il mio numero di telefono: ${phone}`);
     const text = lines.join("\n");
-    window.open(
-      `${site.whatsappHref}?text=${encodeURIComponent(text)}`,
-      "_blank",
-      "noopener,noreferrer"
-    );
-    setSent(true);
+    const nextChatUrl = `${site.whatsappHref}?text=${encodeURIComponent(text)}`;
+    setChatUrl(nextChatUrl);
+    const chatWindow = window.open(nextChatUrl, "_blank");
+    if (chatWindow) {
+      chatWindow.opener = null;
+      setChatOpened(true);
+    } else {
+      setChatOpened(false);
+    }
   };
 
   const inputClasses =
@@ -34,8 +38,8 @@ export default function ContactForm() {
         Scrivimi
       </h2>
       <p className="mt-2 text-sm leading-relaxed text-ink/70">
-        Compila il modulo: apriro una chat WhatsApp con il tuo messaggio già
-        pronto, così potrai inviarlo quando preferisci.
+        Preparo un messaggio per WhatsApp. Prima di inviarlo potrai rileggerlo
+        nella chat.
       </p>
 
       <div className="mt-6 space-y-4">
@@ -103,13 +107,35 @@ export default function ContactForm() {
           Invia via WhatsApp
         </button>
 
-        {sent && (
-          <p className="flex items-center gap-2 rounded-2xl bg-sage-50 px-4 py-3 text-sm font-semibold text-sage-800">
+        {chatOpened && (
+          <p
+            role="status"
+            className="flex items-center gap-2 rounded-2xl bg-sage-50 px-4 py-3 text-sm font-semibold text-sage-800"
+          >
             <IconCheck className="h-4 w-4 shrink-0" />
-            Ho aperto la chat WhatsApp: puoi adesso inviare il messaggio.
+            La chat è aperta in una nuova scheda: puoi rivedere e inviare il
+            messaggio.
+          </p>
+        )}
+        {!chatOpened && chatUrl && (
+          <p
+            role="status"
+            className="rounded-2xl bg-sand px-4 py-3 text-sm leading-relaxed text-ink/80"
+          >
+            Il browser ha impedito l&apos;apertura automatica. {" "}
+            <a
+              href={chatUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="font-bold text-sage-800 underline underline-offset-2"
+            >
+              Apri WhatsApp con il messaggio
+            </a>
+            .
           </p>
         )}
       </div>
     </form>
   );
 }
+

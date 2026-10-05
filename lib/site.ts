@@ -7,6 +7,15 @@ export type Address = {
   mapUrl: string;
 };
 
+const phone = process.env.NEXT_PUBLIC_PHONE?.trim() || "347 093 1701";
+const phoneDigits = phone.replace(/\D/g, "");
+const normalizedPhoneDigits = phoneDigits.startsWith("00")
+  ? phoneDigits.slice(2)
+  : phoneDigits;
+const internationalPhoneDigits = normalizedPhoneDigits.startsWith("39")
+  ? normalizedPhoneDigits
+  : `39${normalizedPhoneDigits}`;
+
 export const site = {
   name: "Perinea",
   url:
@@ -19,9 +28,9 @@ export const site = {
     "Esperta in salute pelvica della donna, rieducazione post-parto e riabilitazione del pavimento pelvico femminile",
   tagline:
     "Al fianco delle donne: gravidanza, parto, post-parto e salute del pavimento pelvico.",
-  phone: process.env.NEXT_PUBLIC_PHONE ?? "347 093 1701",
-  phoneHref: "tel:+393470931701",
-  whatsappHref: "https://wa.me/393470931701",
+  phone,
+  phoneHref: `tel:+${internationalPhoneDigits}`,
+  whatsappHref: `https://wa.me/${internationalPhoneDigits}`,
   bookingNote: "Ricevo su appuntamento presso la clinica Native Medica.",
   payment: ["Contanti", "Carta di debito"],
   addresses: [
@@ -52,3 +61,4 @@ export const navLinks = [
   { href: "/servizi", label: "Servizi" },
   { href: "/contatti", label: "Contatti" },
 ] as const;
+

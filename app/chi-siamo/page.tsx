@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import type { Metadata } from "next";
 import { site } from "@/lib/site";
 import CtaBanner from "@/components/cta-banner";
@@ -7,6 +8,7 @@ import { IconCheck, IconPhone } from "@/components/icons";
 
 export const metadata: Metadata = {
   title: "Chi sono",
+  alternates: { canonical: "/chi-siamo" },
   description:
     "Il percorso di Dott.ssa Isabel Lombardini, ostetrica: laurea con lode a Parma, ospedali di Rimini e Bologna, ASL e specializzazione in salute pelvica.",
 };
@@ -79,8 +81,11 @@ export default function ChiSiamoPage() {
       <section className="container-site pt-8 sm:pt-10">
         <div className="card grid items-center gap-8 p-6 sm:p-10 lg:grid-cols-[minmax(0,400px)_1fr] lg:gap-12">
           <div className="mx-auto max-w-xs lg:max-w-none">
-            <img
+            <Image
               src="/images/Perinea2.jpeg"
+              width={1408}
+              height={768}
+              sizes="(max-width: 1024px) 100vw, 35vw"
               alt="Ritratto professionale della Dott.ssa Isabel Lombardini"
               className="aspect-[4/5] w-full rounded-3xl object-cover shadow-soft"
             />
@@ -186,3 +191,4 @@ export default function ChiSiamoPage() {
     </>
   );
 }
+

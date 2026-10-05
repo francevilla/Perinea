@@ -25,7 +25,7 @@ export default function Footer() {
           <div className="mt-6 flex flex-wrap gap-3">
             <a
               href={site.phoneHref}
-              className="inline-flex items-center gap-2 rounded-full bg-terracotta-500 px-5 py-2.5 text-sm font-bold text-white transition hover:bg-terracotta-400"
+              className="inline-flex items-center gap-2 rounded-full bg-terracotta-700 px-5 py-2.5 text-sm font-bold text-white transition hover:bg-terracotta-800"
             >
               <IconPhone className="h-4 w-4" />
               {site.phone}
@@ -95,3 +95,4 @@ export default function Footer() {
     </footer>
   );
 }
+
