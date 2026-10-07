@@ -108,13 +108,13 @@ export default function HomePage() {
               className="absolute -left-4 -top-4 h-full w-full rounded-[2.5rem] bg-sand sm:-left-6 sm:-top-6"
             />
             <Image
-              src="/images/Isabel.jpeg"
-              width={768}
-              height={1024}
+              src="/images/Perineaprof.jpg"
+              width={848}
+              height={1264}
               priority
               sizes="(max-width: 1024px) 100vw, 50vw"
-              alt="Dott.ssa Isabel Lombardini, ostetrica — ritratto professionale"
-              className="relative aspect-[4/5] w-full rounded-[2.5rem] object-cover shadow-soft"
+              alt="Dott.ssa Isabel Lombardini, ostetrica, nel suo studio professionale"
+              className="relative aspect-[4/5] w-full rounded-[2.5rem] object-cover object-[center_58%] shadow-soft"
             />
             <div className="absolute -bottom-5 left-6 rounded-2xl bg-white/95 px-5 py-3.5 shadow-soft ring-1 ring-sage-900/5 backdrop-blur sm:left-10">
               <p className="text-xs font-bold uppercase tracking-wider text-terracotta-600">
