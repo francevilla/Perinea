@@ -18,7 +18,7 @@ import { site } from "@/lib/site";
 export const metadata: Metadata = {
   metadataBase: new URL(site.url),
   title: {
-    default: "Perinea · Dott.ssa Isabel Lombardini, Ostetrica",
+    default: "Perinea · Dott.ssa Isabel Lombardini, Ostetrica a Casalecchio di Reno e San Lazzaro di Savena (BO)",
     template: "%s · Perinea",
   },
   description:
@@ -87,8 +87,11 @@ export default function RootLayout({
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: structuredData }}
         />
+        <a href="#main" className="skip-link">
+          Vai al contenuto
+        </a>
         <Header />
-        <main className="flex-1">{children}</main>
+        <main className="flex-1" id="main">{children}</main>
         <Footer />
       </body>
     </html>

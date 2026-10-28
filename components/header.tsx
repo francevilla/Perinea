@@ -50,14 +50,14 @@ export default function Header() {
           </span>
         </Link>
 
-        <nav className="hidden items-center gap-8 md:flex">
+        <nav className="hidden items-center gap-8 md:flex" aria-label="Navigazione principale">
           {navLinks.map((link) => (
             <Link
               key={link.href}
               href={link.href}
-              className={`text-sm font-semibold transition-colors hover:text-terracotta-600 ${
+              className={`text-sm font-semibold transition-colors hover:text-terracotta-700 ${
                 pathname === link.href
-                  ? "text-terracotta-600"
+                  ? "text-terracotta-700"
                   : "text-ink/75"
               }`}
               aria-current={pathname === link.href ? "page" : undefined}
@@ -67,7 +67,7 @@ export default function Header() {
           ))}
           <a
             href={site.phoneHref}
-            className="inline-flex items-center gap-2 rounded-full bg-sage-700 px-5 py-2.5 text-sm font-bold text-cream transition hover:bg-sage-800"
+            className="inline-flex h-11 items-center justify-center gap-2 rounded-full bg-sage-700 px-5 text-sm font-bold text-cream transition hover:bg-sage-800"
           >
             <IconPhone className="h-4 w-4" />
             {site.phone}
@@ -93,6 +93,7 @@ export default function Header() {
 
       <nav
         id="mobile-navigation"
+        aria-label="Navigazione mobile"
         className={`${open ? "block" : "hidden"} border-t border-sage-900/10 bg-cream px-5 pb-6 pt-3 md:hidden`}
       >
         <ul className="space-y-1">
@@ -114,7 +115,7 @@ export default function Header() {
         </ul>
         <a
           href={site.phoneHref}
-          className="mt-4 inline-flex w-full items-center justify-center gap-2 rounded-full bg-sage-700 px-5 py-3 text-sm font-bold text-cream"
+          className="mt-4 inline-flex h-11 w-full items-center justify-center gap-2 rounded-full bg-sage-700 px-5 text-sm font-bold text-cream"
         >
           <IconPhone className="h-4 w-4" />
           Chiamami · {site.phone}

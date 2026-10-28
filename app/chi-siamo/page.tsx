@@ -82,12 +82,12 @@ export default function ChiSiamoPage() {
         <div className="card grid items-center gap-8 p-6 sm:p-10 lg:grid-cols-[minmax(0,400px)_1fr] lg:gap-12">
           <div className="mx-auto max-w-xs lg:max-w-none">
             <Image
-              src="/images/Perinea2.jpeg"
-              width={1408}
-              height={768}
+              src="/images/Isabel.jpeg"
+              width={768}
+              height={1024}
               sizes="(max-width: 1024px) 100vw, 35vw"
-              alt="Ritratto professionale della Dott.ssa Isabel Lombardini"
-              className="aspect-[4/5] w-full rounded-3xl object-cover shadow-soft"
+              alt="Ritratto professionale della Dott.ssa Isabel Lombardini, ostetrica"
+              className="aspect-[3/4] w-full rounded-3xl object-cover shadow-soft"
             />
           </div>
           <div>

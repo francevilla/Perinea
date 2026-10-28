@@ -39,13 +39,13 @@ export default function ServiziPage() {
 
       <section className="container-site space-y-10 py-14 sm:py-20">
         {serviceGroups.map((group) => (
-          <div key={group.id} className="card p-6 sm:p-10">
+          <div key={group.id} id={group.id} className="card p-6 sm:p-10">
             <div className="flex flex-col gap-2 sm:flex-row sm:items-baseline sm:justify-between">
               <h2 className="font-serif text-2xl font-semibold text-sage-900 sm:text-3xl">
                 {group.title}
               </h2>
             </div>
-            <p className="mt-2 max-w-2xl text-sm leading-relaxed text-ink/70 sm:text-base">
+            <p className="mt-2 max-w-2xl body-lg text-ink/70">
               {group.description}
             </p>
             <ul className="mt-7 divide-y divide-sage-900/5">
@@ -54,10 +54,10 @@ export default function ServiziPage() {
                   key={service.name}
                   className="flex flex-col gap-1 py-4 sm:flex-row sm:items-center sm:justify-between sm:gap-6"
                 >
-                  <div>
+                  <div className="flex flex-col gap-1">
                     <p className="font-semibold text-ink">{service.name}</p>
                     {service.note && (
-                      <p className="mt-0.5 text-sm text-ink/55">
+                      <p className="mt-0.5 text-sm leading-relaxed text-muted">
                         {service.note}
                       </p>
                     )}
@@ -77,7 +77,7 @@ export default function ServiziPage() {
           </div>
         ))}
 
-        <p className="text-xs leading-relaxed text-ink/50">
+        <p className="text-base leading-relaxed text-meta">
           {priceDisclaimer}
         </p>
       </section>

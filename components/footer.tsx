@@ -5,6 +5,9 @@ import { IconMapPin, IconPhone, IconWhatsApp } from "./icons";
 
 export default function Footer() {
   const year = new Date().getFullYear();
+  const showProfessional = Boolean(
+    site.professional.order || site.professional.vat || site.professional.email
+  );
 
   return (
     <footer className="bg-sage-900 text-cream">
@@ -81,6 +84,32 @@ export default function Footer() {
           </ul>
         </div>
       </div>
+
+      {showProfessional && (
+        <div className="mt-8">
+          <p className="text-sm leading-relaxed text-cream/70 max-w-xl">
+            {site.professional.order && (
+              <span>{site.professional.order}</span>
+            )}
+            {site.professional.vat && (
+              <>
+                · P.IVA {site.professional.vat}
+              </>
+            )}
+            {site.professional.email && (
+              <>
+                ·{" "}
+                <a
+                  href={`mailto:${site.professional.email}`}
+                  className="text-terracotta-300 underline underline-offset-2 hover:text-cream"
+                >
+                  {site.professional.email}
+                </a>
+              </>
+            )}
+          </p>
+        </div>
+      )}
 
       <div className="border-t border-cream/10">
         <div className="container-site flex flex-col gap-2 py-6 text-xs text-cream/60 sm:flex-row sm:items-center sm:justify-between">
