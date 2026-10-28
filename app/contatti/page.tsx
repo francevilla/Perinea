@@ -46,6 +46,18 @@ export default function ContattiPage() {
                     {site.phone}
                   </a>
                 </div>
+                <p className="text-xs text-muted">Orari: {site.bookingHours}</p>
+                {site.schedulingUrl && (
+                  <a
+                    href={site.schedulingUrl}
+                    target="_blank"
+                    rel="noreferrer"
+                    className="mt-2 inline-flex items-center justify-center gap-2 rounded-full border-2 border-sage-700 px-5 py-2.5 text-sm font-bold text-sage-800 transition hover:bg-sage-700 hover:text-cream"
+                  >
+                    <IconClock className="h-4 w-4" />
+                    Prenota online
+                  </a>
+                )}
               </div>
               <a
                 href={site.whatsappHref}
@@ -57,7 +69,7 @@ export default function ContattiPage() {
                 WhatsApp
               </a>
             </div>
-            <p className="mt-5 flex items-start gap-2.5 rounded-2xl bg-sand/80 px-4 py-3 text-sm leading-relaxed text-ink/70">
+            <p className="mt-5 flex items-start gap-2.5 rounded-2xl bg-sand/80 px-4 py-3 text-base leading-relaxed text-meta">
               <IconClock className="mt-0.5 h-4 w-4 shrink-0 text-terracotta-600" />
               {site.bookingNote} Pagamenti accettati: {site.payment.join(", ")}.
             </p>
@@ -79,8 +91,27 @@ export default function ContattiPage() {
             non necessari.
           </p>
         </div>
+
+        <section id="privacy" className="mt-10 pt-8 border-t border-sage-900/5">
+          <SectionHeading eyebrow="Privacy" title="Informativa privacy" />
+          <p className="mt-4 text-sm leading-relaxed text-ink/70 max-w-xl">
+            Il modulo di contatto non invia né archivia dati sul sito: prepara
+            un messaggio e lo apre in WhatsApp, dove puoi rileggerlo prima di
+            inviarlo. WhatsApp è un soggetto terzo: per questo ti chiediamo di
+            non inserire dettagli sanitari non necessari nella prima richiesta.
+          </p>
+          <p className="mt-3 text-sm leading-relaxed text-ink/70">
+            I dati che inserisci (nome, telefono facoltativo, messaggio)
+            restano sul tuo dispositivo finché non decidi di inviare la chat.
+            Non usiamo cookie di tracciamento di terze parti.
+          </p>
+          <p className="mt-3 text-xs text-ink/50">
+            Informativa completa in pubblicazione. Per esercitare i tuoi
+            diritti o chiedere la cancellazione, scrivimi su WhatsApp o chiama
+            direttamente lo studio.
+          </p>
+        </section>
       </section>
     </>
   );
 }
-

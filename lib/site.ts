@@ -19,8 +19,7 @@ const internationalPhoneDigits = normalizedPhoneDigits.startsWith("39")
 export const site = {
   name: "Perinea",
   url:
-    process.env.NEXT_PUBLIC_SITE_URL?.trim() ||
-    "https://perinea-ashy.vercel.app",
+    process.env.NEXT_PUBLIC_SITE_URL?.trim() || "https://www.perinea.it",
   doctorName: "Isabel Lombardini",
   doctorFullName: "Dott.ssa Isabel Lombardini",
   role: "Ostetrica",
@@ -32,7 +31,14 @@ export const site = {
   phoneHref: `tel:+${internationalPhoneDigits}`,
   whatsappHref: `https://wa.me/${internationalPhoneDigits}`,
   bookingNote: "Ricevo su appuntamento presso la clinica Native Medica.",
+  bookingHours: "Orari di ricevimento su appuntamento (link di prenotazione in configurazione).",
+  schedulingUrl: process.env.NEXT_PUBLIC_SCHEDULING_URL?.trim() || "",
   payment: ["Contanti", "Carta di debito"],
+  professional: {
+    order: process.env.NEXT_PUBLIC_PROFESSIONAL_ORDER?.trim() || "", // es. Ordine delle Ostetriche di Bologna, n. iscrizione
+    vat: process.env.NEXT_PUBLIC_VAT_NUMBER?.trim() || "", // P.IVA
+    email: process.env.NEXT_PUBLIC_PROFESSIONAL_EMAIL?.trim() || "",
+  },
   addresses: [
     {
       id: "casalecchio",

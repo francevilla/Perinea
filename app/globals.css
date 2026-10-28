@@ -64,5 +64,32 @@
   .card {
     @apply rounded-3xl bg-white shadow-sm ring-1 ring-sage-900/5;
   }
+
+  .text-muted {
+    @apply text-ink/70;
+  }
+
+  .text-meta {
+    @apply text-ink/75;
+  }
+
+  .body-lg {
+    @apply text-base leading-relaxed;
+  }
+
+  .btn-primary,
+  .btn-accent,
+  .btn-outline {
+    @apply min-h-[44px];
+  }
+
+  .skip-link {
+    @apply absolute -top-10 left-0 z-50 px-4 py-2 bg-terracotta-700 text-cream font-bold text-sm rounded-full transition-transform duration-200;
+    transform: translatey(-100%);
+  }
+
+  .skip-link:focus-visible {
+    transform: translatey(0);
+  }
 }
 

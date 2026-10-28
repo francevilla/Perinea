@@ -36,24 +36,28 @@ const homeServices = [
     title: "Riabilitazione del pavimento pelvico",
     description:
       "Incontinenza, pesantezza, discomfort post-parto: un percorso personalizzato con biofeedback e tecnologia VTONE.",
+    group: "pavimento-pelvico",
   },
   {
     icon: "heart" as const,
     title: "Visite ostetriche",
     description:
       "Accompagno le gravidanze a basso rischio, dalla prima visita al post-parto, con ascolto e competenza.",
+    group: "ostetricia",
   },
   {
     icon: "heart" as const,
     title: "Sostegno all'allattamento",
     description:
       "Supporto pratico per affrontare le prime settimane con serenità: presa, frequenza, difficoltà comuni.",
+    group: "ostetricia",
   },
   {
     icon: "book" as const,
     title: "Corsi pre-parto di coppia",
     description:
       "Percorsi per prepararsi alla nascita insieme: respirazione, posizioni, accompagnamento al parto.",
+    group: "corsi",
   },
 ];
 
@@ -95,7 +99,10 @@ export default function HomePage() {
                 <IconPhone className="h-4 w-4" />
                 {site.phone}
               </a>
-              <Link href="/servizi#prima-visita" className="btn-outline">
+              <Link
+                href="#prima-visita"
+                className="text-sm font-bold text-terracotta-600 underline underline-offset-2 transition hover:text-terracotta-700"
+              >
                 Come funziona la prima visita
                 <IconArrowRight className="h-4 w-4" />
               </Link>
@@ -136,7 +143,7 @@ export default function HomePage() {
               <p className="font-serif text-2xl font-semibold text-sage-800 sm:text-3xl">
                 {item.value}
               </p>
-              <p className="mt-1.5 text-xs leading-relaxed text-ink/65 sm:text-sm">
+              <p className="mt-1.5 text-xs leading-relaxed text-muted sm:text-sm">
                 {item.label}
               </p>
             </div>
@@ -179,7 +186,7 @@ export default function HomePage() {
             </li>
           ))}
         </ol>
-        <p className="mx-auto mt-5 max-w-3xl text-center text-sm leading-relaxed text-ink/60">
+        <p className="mx-auto mt-5 max-w-3xl text-center text-base leading-relaxed text-meta">
           La durata indicativa del primo colloquio è di circa un’ora. La
           valutazione e gli eventuali trattamenti vengono concordati in base
           alla tua situazione.
@@ -200,7 +207,7 @@ export default function HomePage() {
               icon={service.icon}
               title={service.title}
               description={service.description}
-              href="/servizi"
+              href={`/servizi#${service.group}`}
             />
           ))}
         </div>
@@ -293,7 +300,7 @@ export default function HomePage() {
               height={768}
               sizes="(max-width: 1024px) 100vw, 50vw"
               alt="Illustrazione della zona pelvica della donna, stile morbido e botanico"
-              className="aspect-square w-full rounded-[2.5rem] object-cover shadow-soft"
+              className="aspect-[16/9] w-full rounded-[2.5rem] object-cover shadow-soft"
             />
           </div>
         </div>

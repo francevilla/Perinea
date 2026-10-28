@@ -58,6 +58,7 @@ export default function ContactForm() {
             value={name}
             onChange={(e) => setName(e.target.value)}
             placeholder="Il tuo nome"
+            autoComplete="name"
             className={inputClasses}
           />
         </div>
@@ -76,6 +77,8 @@ export default function ContactForm() {
             value={phone}
             onChange={(e) => setPhone(e.target.value)}
             placeholder="Come raggiungerti"
+            autoComplete="tel"
+            inputMode="tel"
             className={inputClasses}
           />
         </div>
@@ -99,6 +102,16 @@ export default function ContactForm() {
           />
         </div>
 
+        <p className="mt-3 text-xs leading-relaxed text-ink/60">
+          Il messaggio si apre in WhatsApp: potrai leggerlo prima di inviare.
+          <a
+            href="/contatti#privacy"
+            className="font-bold text-terracotta-600 underline underline-offset-2 hover:text-terracotta-700"
+          >
+            Informativa privacy
+          </a>{" "}
+          (in pubblicazione). Non inserire dettagli sanitari non necessari.
+        </p>
         <button
           type="submit"
           className="btn-accent w-full"
