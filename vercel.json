@@ -1,0 +1,6 @@
+{
+  "$schema": "https://openapi.vercel.sh/vercel.json",
+  "installCommand": "npm ci --prefer-offline --no-audit --no-fund",
+  "ignoreCommand": "git diff --quiet HEAD^ HEAD -- app components lib public package.json package-lock.json next.config.mjs tailwind.config.ts postcss.config.mjs tsconfig.json",
+  "regions": ["fra1"]
+}
