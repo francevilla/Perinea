@@ -115,7 +115,7 @@ export default function HomePage() {
               className="absolute -left-4 -top-4 h-full w-full rounded-[2.5rem] bg-sand sm:-left-6 sm:-top-6"
             />
             <Image
-              src="/images/Perineaprof.jpg"
+              src="/images/Perineaprof.jpeg"
               width={848}
               height={1264}
               priority
