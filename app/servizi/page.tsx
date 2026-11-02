@@ -5,10 +5,10 @@ import SectionHeading from "@/components/section-heading";
 import { IconClock, IconSparkles } from "@/components/icons";
 
 export const metadata: Metadata = {
-  title: "Servizi",
+  title: "Servizi – Riabilitazione pavimento pelvico a Bologna",
   alternates: { canonical: "/servizi" },
   description:
-    "Riabilitazione del pavimento pelvico, visite ostetriche, allattamento, Pap test e corsi pre-parto di coppia con Dott.ssa Isabel Lombardini a Casalecchio di Reno e San Lazzaro di Savena.",
+    "Riabilitazione pavimento pelvico, visite ostetriche, corsi pre-parto e sostegno all'allattamento. Prenota la tua visita con la Dott.ssa Isabel Lombardini a Casalecchio di Reno.",
 };
 
 export default function ServiziPage() {
@@ -24,9 +24,9 @@ export default function ServiziPage() {
 
       <section id="prima-visita" className="container-site scroll-mt-24 pt-10">
         <div className="rounded-3xl bg-sand/80 p-6 sm:p-8">
-          <h2 className="font-serif text-2xl font-semibold text-sage-900">
+          <h3 className="font-serif text-2xl font-semibold text-sage-900">
             Cosa aspettarti dal primo appuntamento
-          </h2>
+          </h3>
           <p className="mt-3 max-w-3xl text-sm leading-relaxed text-ink/75 sm:text-base">
             Il primo colloquio dura indicativamente circa un’ora. Partiamo
             dalla tua storia e dalle tue domande; se pertinente, concordiamo

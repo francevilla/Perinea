@@ -7,10 +7,10 @@ import SectionHeading from "@/components/section-heading";
 import { IconCheck, IconPhone } from "@/components/icons";
 
 export const metadata: Metadata = {
-  title: "Chi sono",
+  title: "Chi sono – Dott.ssa Isabel Lombardini – Ostetrica Casalecchio",
   alternates: { canonical: "/chi-siamo" },
   description:
-    "Il percorso di Dott.ssa Isabel Lombardini, ostetrica: laurea con lode a Parma, ospedali di Rimini e Bologna, ASL e specializzazione in salute pelvica.",
+    "Scopri il percorso professionale della Dott.ssa Isabel Lombardini, ostetrica esperta in salute pelvica a Casalecchio di Reno e San Lazzaro di Savena. Laurea con lode, 15+ anni di esperienza tra ospedale e ASL.",
 };
 
 const milestones = [
@@ -92,9 +92,9 @@ export default function ChiSiamoPage() {
           </div>
           <div>
             <p className="eyebrow">Ostetrica · Salute pelvica della donna</p>
-            <h2 className="mt-3 font-serif text-3xl font-semibold text-sage-900 sm:text-4xl">
+            <h1 className="mt-3 font-serif text-3xl font-semibold text-sage-900 sm:text-4xl">
               Dott.ssa Isabel Lombardini
-            </h2>
+            </h1>
             <p className="mt-5 text-base leading-relaxed text-ink/75">
               Sono ostetrica da oltre 15 anni, con esperienza tra ospedale e
               ASL: dall&apos;Ospedale &laquo;Infermi&raquo; di Rimini al

@@ -12,11 +12,11 @@ import { site } from "@/lib/site";
 export const metadata: Metadata = {
   metadataBase: new URL(site.url),
   title: {
-    default: "Perinea · Dott.ssa Isabel Lombardini, Ostetrica a Casalecchio di Reno e San Lazzaro di Savena (BO)",
+    default: "Perinea – Ostetrica a Casalecchio di Reno e San Lazzaro di Savena",
     template: "%s · Perinea",
   },
   description:
-    "Dott.ssa Isabel Lombardini, ostetrica a Casalecchio di Reno e San Lazzaro di Savena: riabilitazione del pavimento pelvico, gravidanze a basso rischio, allattamento e corsi pre-parto di coppia. Clinica Native Medica.",
+    "Prenota una visita ostetrica a Casalecchio di Reno. Riabilitazione pavimento pelvico, corsi pre‑parto e sostegno all'allattamento con la Dott.ssa Isabel Lombardini.",
   openGraph: {
     title: "Perinea · Dott.ssa Isabel Lombardini, Ostetrica",
     description:
@@ -67,6 +67,8 @@ const structuredData = JSON.stringify({
     "Consulenza allattamento",
     "Corsi pre-parto di coppia",
   ],
+  areaServed: ["Casalecchio di Reno", "San Lazzaro di Savena", "Bologna (BO)"],
+  paymentAccepted: ["Contanti", "Carta di debito"],
 }).replace(/</g, "\\u003c");
 
 export default function RootLayout({
