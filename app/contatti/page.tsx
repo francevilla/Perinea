@@ -10,10 +10,10 @@ import {
 } from "@/components/icons";
 
 export const metadata: Metadata = {
-  title: "Contatti",
+  title: "Contatti – Ostetrica a Casalecchio di Reno",
   alternates: { canonical: "/contatti" },
   description:
-    "Contatta la Dott.ssa Isabel Lombardini: telefono, WhatsApp e recapiti della clinica Native Medica a Casalecchio di Reno e San Lazzaro di Savena.",
+    "Contatti della Dott.ssa Isabel Lombardini: chiamami o scrivimi su WhatsApp per prenotare una visita di riabilitazione del pavimento pelvico a Casalecchio di Reno.",
 };
 
 export default function ContattiPage() {
