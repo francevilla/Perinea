@@ -4,7 +4,8 @@ type SectionHeadingProps = {
   description?: string;
   align?: "left" | "center";
   dark?: boolean;
-  level?: 1 | 2 | 3;
+  /** 0 = renderizza un <p> (nessun heading) — usato quando un h1 reale compare dopo */
+  level?: 0 | 1 | 2 | 3;
 };
 
 export default function SectionHeading({
@@ -15,7 +16,9 @@ export default function SectionHeading({
   dark = false,
   level = 2,
 }: SectionHeadingProps) {
-  const Tag = level === 1 ? "h1" : level === 3 ? "h3" : "h2";
+  const Tag = (
+    level === 0 ? "p" : level === 1 ? "h1" : level === 3 ? "h3" : "h2"
+  ) as "p" | "h1" | "h2" | "h3";
   return (
     <div
       className={`max-w-2xl ${align === "center" ? "mx-auto text-center" : ""}`}

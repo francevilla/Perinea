@@ -1,14 +1,17 @@
 import type { Metadata } from "next";
+import Link from "next/link";
 import { priceDisclaimer, serviceGroups } from "@/lib/services";
 import CtaBanner from "@/components/cta-banner";
 import SectionHeading from "@/components/section-heading";
+import Breadcrumb from "@/components/breadcrumb";
+import FaqSection from "@/components/faq-section";
 import { IconClock, IconSparkles } from "@/components/icons";
 
 export const metadata: Metadata = {
-  title: "Servizi – Riabilitazione pavimento pelvico a Bologna",
+  title: "Servizi e prezzi | Pavimento pelvico e ostetricia",
   alternates: { canonical: "/servizi" },
   description:
-    "Riabilitazione pavimento pelvico, visite ostetriche, corsi pre-parto e sostegno all'allattamento. Prenota la tua visita con la Dott.ssa Isabel Lombardini a Casalecchio di Reno.",
+    "Riabilitazione del pavimento pelvico, visite ostetriche, screening e corsi pre-parto con prezzi indicativi. Prenota a Casalecchio di Reno.",
 };
 
 export default function ServiziPage() {
@@ -19,14 +22,22 @@ export default function ServiziPage() {
           eyebrow="Servizi"
           title="Prendersi cura di te, con il percorso giusto"
           description="Ogni percorso inizia con un colloquio: capiamo insieme obiettivi, tempi e aspettative, poi definiamo il piano che fa per te."
+          level={1}
         />
       </section>
 
+      <Breadcrumb
+        items={[
+          { name: "Home", path: "/" },
+          { name: "Servizi", path: "/servizi" },
+        ]}
+      />
+
       <section id="prima-visita" className="container-site scroll-mt-24 pt-10">
         <div className="rounded-3xl bg-sand/80 p-6 sm:p-8">
-          <h3 className="font-serif text-2xl font-semibold text-sage-900">
+          <h2 className="font-serif text-2xl font-semibold text-sage-900">
             Cosa aspettarti dal primo appuntamento
-          </h3>
+          </h2>
           <p className="mt-3 max-w-3xl text-sm leading-relaxed text-ink/75 sm:text-base">
             Il primo colloquio dura indicativamente circa un’ora. Partiamo
             dalla tua storia e dalle tue domande; se pertinente, concordiamo
@@ -115,6 +126,48 @@ export default function ServiziPage() {
         </div>
       </section>
 
+      <FaqSection
+        faqs={[
+          {
+            question: "Quanto dura la prima visita ostetrica?",
+            answer:
+              "Il primo colloquio dura indicativamente circa un'ora: anamnesi, ascolto delle tue domande e, se pertinente, definizione del percorso. Valutazione e trattamenti vengono concordati in base alla tua situazione.",
+          },
+          {
+            question: "Quanto costa la riabilitazione del pavimento pelvico?",
+            answer:
+              "La seduta di riabilitazione del pavimento pelvico con biofeedback e tecnologia VTONE costa € 103. Il Pap test costa € 25, il test HPV € 60. Le tariffe sono indicative, come pubblicate nel listino MioDottore.",
+          },
+          {
+            question: "Dove riceve la Dott.ssa Isabel Lombardini?",
+            answer:
+              "Riceve presso la clinica Native Medica in due sedi: Via Bazzanese 32/4 a Casalecchio di Reno (40033) e Via Emilia 239 a San Lazzaro di Savena (40068), esclusivamente su appuntamento.",
+          },
+          {
+            question: "Come si prenota una visita?",
+            answer:
+              "Puoi chiamare al 347 093 1701, scrivere su WhatsApp oppure usare il modulo dei contatti: la Dott.ssa risponde personalmente a ogni messaggio.",
+          },
+          {
+            question: "Il corso pre-parto di coppia è a pagamento?",
+            answer:
+              "No, il corso pre-parto di coppia è gratuito e copre respirazione, accompagnamento al parto e allattamento.",
+          },
+          {
+            question: "Cos'è il VTONE?",
+            answer:
+              "Il VTONE è un sistema di biofeedback e stimolazione pelvica non invasiva che aiuta a osservare l'attività muscolare del pavimento pelvico. Indicazione e modalità vengono valutate insieme.",
+          },
+        ]}
+      />
+      <nav aria-label="Pagine correlate" className="mt-10 flex flex-wrap gap-3">
+        <Link href="/contatti" className="btn-outline">
+          Contatti e prenotazioni
+        </Link>
+        <Link href="/chi-siamo" className="btn-outline">
+          Il mio percorso professionale
+        </Link>
+      </nav>
       <div className="pt-10">
         <CtaBanner
           title="Non sai da dove iniziare?"

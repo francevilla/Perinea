@@ -3,9 +3,14 @@ import { IconArrowRight, IconMapPin } from "./icons";
 
 type AddressCardProps = {
   address: Address;
+  headingLevel?: 2 | 3;
 };
 
-export default function AddressCard({ address }: AddressCardProps) {
+export default function AddressCard({
+  address,
+  headingLevel = 3,
+}: AddressCardProps) {
+  const Heading = headingLevel === 2 ? "h2" : "h3";
   return (
     <div className="card flex items-start justify-between gap-4 p-6">
       <div className="flex items-start gap-4">
@@ -13,9 +18,9 @@ export default function AddressCard({ address }: AddressCardProps) {
           <IconMapPin className="h-6 w-6" />
         </span>
         <div>
-          <h3 className="font-serif text-xl font-semibold text-sage-900">
+          <Heading className="font-serif text-xl font-semibold text-sage-900">
             {address.structure}
-          </h3>
+          </Heading>
           <p className="mt-1 text-sm leading-relaxed text-ink/70">
             {address.street}
             <br />
