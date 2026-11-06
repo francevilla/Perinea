@@ -8,15 +8,17 @@ import "./globals.css";
 import Header from "@/components/header";
 import Footer from "@/components/footer";
 import { site } from "@/lib/site";
+import JsonLd from "@/components/json-ld";
+import { organizationSchema } from "@/lib/schema";
 
 export const metadata: Metadata = {
   metadataBase: new URL(site.url),
   title: {
-    default: "Perinea – Ostetrica a Casalecchio di Reno e San Lazzaro di Savena",
+    default: "Perinea – Ostetrica salute pelvica e ostetricia",
     template: "%s · Perinea",
   },
   description:
-    "Prenota una visita ostetrica a Casalecchio di Reno. Riabilitazione pavimento pelvico, corsi pre‑parto e sostegno all'allattamento con la Dott.ssa Isabel Lombardini.",
+    "Riabilitazione del pavimento pelvico, visite ostetriche e corsi pre-parto a Casalecchio di Reno e San Lazzaro di Savena. Prenota con la Dott.ssa Isabel Lombardini.",
   openGraph: {
     title: "Perinea · Dott.ssa Isabel Lombardini, Ostetrica",
     description:
@@ -47,29 +49,7 @@ export const metadata: Metadata = {
   alternates: { canonical: "/" },
 };
 
-const structuredData = JSON.stringify({
-  "@context": "https://schema.org",
-  "@type": "MedicalBusiness",
-  name: `${site.doctorFullName} · ${site.role}`,
-  url: site.url,
-  telephone: site.phoneHref.replace("tel:", ""),
-  description: site.specialization,
-  address: site.addresses.map((address) => ({
-    "@type": "PostalAddress",
-    streetAddress: address.street,
-    addressLocality: address.city.replace(/\s*\(BO\)$/, ""),
-    postalCode: address.cap,
-    addressCountry: "IT",
-  })),
-  availableService: [
-    "Riabilitazione del pavimento pelvico",
-    "Visite ostetriche per gravidanze a basso rischio",
-    "Consulenza allattamento",
-    "Corsi pre-parto di coppia",
-  ],
-  areaServed: ["Casalecchio di Reno", "San Lazzaro di Savena", "Bologna (BO)"],
-  paymentAccepted: ["Contanti", "Carta di debito"],
-}).replace(/</g, "\\u003c");
+
 
 export default function RootLayout({
   children,
@@ -79,10 +59,7 @@ export default function RootLayout({
   return (
     <html lang="it">
       <body className="flex min-h-screen flex-col">
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: structuredData }}
-        />
+        <JsonLd data={organizationSchema()} />
         <a href="#main" className="skip-link">
           Vai al contenuto
         </a>

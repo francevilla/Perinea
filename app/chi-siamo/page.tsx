@@ -4,10 +4,11 @@ import type { Metadata } from "next";
 import { site } from "@/lib/site";
 import CtaBanner from "@/components/cta-banner";
 import SectionHeading from "@/components/section-heading";
+import Breadcrumb from "@/components/breadcrumb";
 import { IconCheck, IconPhone } from "@/components/icons";
 
 export const metadata: Metadata = {
-  title: "Chi sono – Dott.ssa Isabel Lombardini – Ostetrica Casalecchio",
+  title: "Chi sono | Dott.ssa Isabel Lombardini, ostetrica · Perinea",
   alternates: { canonical: "/chi-siamo" },
   description:
     "Scopri il percorso professionale della Dott.ssa Isabel Lombardini, ostetrica esperta in salute pelvica a Casalecchio di Reno e San Lazzaro di Savena. Laurea con lode, 15+ anni di esperienza tra ospedale e ASL.",
@@ -75,8 +76,16 @@ export default function ChiSiamoPage() {
         <SectionHeading
           eyebrow="Chi sono"
           title="Il mio percorso, la mia passione"
+          level={0}
         />
       </section>
+
+      <Breadcrumb
+        items={[
+          { name: "Home", path: "/" },
+          { name: "Chi sono", path: "/chi-siamo" },
+        ]}
+      />
 
       <section className="container-site pt-8 sm:pt-10">
         <div className="card grid items-center gap-8 p-6 sm:p-10 lg:grid-cols-[minmax(0,400px)_1fr] lg:gap-12">
@@ -137,9 +146,9 @@ export default function ChiSiamoPage() {
                 <p className="text-xs font-bold uppercase tracking-[0.18em] text-terracotta-600">
                   {milestone.year}
                 </p>
-                <h3 className="mt-1.5 font-serif text-xl font-semibold text-sage-900">
+                <h2 className="mt-1.5 font-serif text-xl font-semibold text-sage-900">
                   {milestone.title}
-                </h3>
+                </h2>
                 <p className="mt-2 text-sm leading-relaxed text-ink/70 sm:text-base">
                   {milestone.text}
                 </p>
@@ -151,9 +160,9 @@ export default function ChiSiamoPage() {
         <aside className="space-y-6">
           <div className="card p-7">
             <p className="eyebrow">Oggi</p>
-            <h3 className="mt-3 font-serif text-2xl font-semibold text-sage-900">
+            <h2 className="mt-3 font-serif text-2xl font-semibold text-sage-900">
               Clinica Native Medica
-            </h3>
+            </h2>
             <p className="mt-3 text-sm leading-relaxed text-ink/70">
               {site.bookingNote} Ricevo a Casalecchio di Reno (Via Bazzanese
               32/4) e a San Lazzaro di Savena (Via Emilia 239).
@@ -183,6 +192,15 @@ export default function ChiSiamoPage() {
           </div>
         </aside>
       </section>
+
+      <nav aria-label="Pagine correlate" className="mt-10 flex flex-wrap gap-3">
+        <Link href="/servizi" className="btn-outline">
+          Servizi e prezzi
+        </Link>
+        <Link href="/contatti" className="btn-outline">
+          Contatti e prenotazioni
+        </Link>
+      </nav>
 
       <CtaBanner
         title="Vogliamo conoscerci?"

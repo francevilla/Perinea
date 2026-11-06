@@ -3,6 +3,7 @@ import { site } from "@/lib/site";
 import AddressCard from "@/components/address-card";
 import ContactForm from "@/components/contact-form";
 import SectionHeading from "@/components/section-heading";
+import Breadcrumb from "@/components/breadcrumb";
 import {
   IconClock,
   IconPhone,
@@ -10,10 +11,10 @@ import {
 } from "@/components/icons";
 
 export const metadata: Metadata = {
-  title: "Contatti – Ostetrica a Casalecchio di Reno",
+  title: "Contatti e prenotazioni | Ostetrica a Casalecchio",
   alternates: { canonical: "/contatti" },
   description:
-    "Contatti della Dott.ssa Isabel Lombardini: chiamami o scrivimi su WhatsApp per prenotare una visita di riabilitazione del pavimento pelvico a Casalecchio di Reno.",
+    "Chiamami o scrivimi su WhatsApp per prenotare una visita ostetrica o di riabilitazione del pavimento pelvico a Casalecchio e San Lazzaro.",
 };
 
 export default function ContattiPage() {
@@ -24,8 +25,16 @@ export default function ContattiPage() {
           eyebrow="Contatti"
           title="Sono qui per ascoltarti"
           description="Chiamami, scrivimi su WhatsApp o usa il modulo: rispondo personalmente a ogni messaggio."
+          level={1}
         />
       </section>
+
+      <Breadcrumb
+        items={[
+          { name: "Home", path: "/" },
+          { name: "Contatti", path: "/contatti" },
+        ]}
+      />
 
       <section className="container-site grid gap-8 py-14 sm:py-20 lg:grid-cols-2">
         <div className="space-y-6">
@@ -77,7 +86,7 @@ export default function ContattiPage() {
 
           <div className="space-y-5">
             {site.addresses.map((address) => (
-              <AddressCard key={address.id} address={address} />
+              <AddressCard key={address.id} address={address} headingLevel={2} />
             ))}
           </div>
         </div>
