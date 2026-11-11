@@ -7,6 +7,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
   const routes: { path: string; priority: number }[] = [
     { path: "", priority: 1 },
     { path: "/servizi", priority: 0.9 },
+    { path: "/local/casalecchio", priority: 0.85 },
+    { path: "/local/san-lazzaro", priority: 0.85 },
     { path: "/contatti", priority: 0.8 },
     { path: "/chi-siamo", priority: 0.7 },
   ];

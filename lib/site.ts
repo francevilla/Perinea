@@ -36,8 +36,8 @@ export const site = {
   payment: ["Contanti", "Carta di debito"],
   professional: {
     order: process.env.NEXT_PUBLIC_PROFESSIONAL_ORDER?.trim() || "", // es. Ordine delle Ostetriche di Bologna, n. iscrizione
-    vat: process.env.NEXT_PUBLIC_VAT_NUMBER?.trim() || "", // P.IVA
-    email: process.env.NEXT_PUBLIC_PROFESSIONAL_EMAIL?.trim() || "",
+    vat: process.env.NEXT_PUBLIC_VAT_NUMBER?.trim() || "04292041201", // P.IVA
+    email: process.env.NEXT_PUBLIC_PROFESSIONAL_EMAIL?.trim() || "isabel@perinea.it",
   },
   addresses: [
     {
