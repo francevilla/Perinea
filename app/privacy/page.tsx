@@ -54,6 +54,37 @@ export default function PrivacyPage() {
           tuoi dati, e opporti in qualsiasi momento. Scrivi su WhatsApp o chiama
           direttamente lo studio per esercitare i tuoi diritti.
         </p>
+
+        <h2 className="font-serif text-2xl font-semibold text-sage-900 mb-6 mt-10">
+          Modulo di contatto
+        </h2>
+        <p className="mb-4 text-sm leading-relaxed text-ink/75">
+          Quando compili il modulo di contatto, i dati che inserisci (nome,
+          email, telefono facoltativo e messaggio) vengono trasmessi alla mia
+          casella email tramite Web3Forms, un servizio di terze parti che
+          inoltra le submission per email. Il sito non archivia i dati del
+          modulo e non imposta cookie di tracciamento di terze parti.
+        </p>
+        <p className="mb-4 text-sm leading-relaxed text-ink/75">
+          Web3Forms dichiara di non conservare le submission: le elabora e le
+          inoltra all’email di destinazione. I suoi server sono localizzati
+          negli Stati Uniti (regione US-East); i possibili log contenenti dati
+          personali vengono cancellati periodicamente (ogni 2 mesi). Per
+          questo, ti chiediamo di non inserire dettagli sanitari non
+          necessari nella prima richiesta.
+        </p>
+        <p className="mb-4 text-sm leading-relaxed text-ink/75">
+          Informativa completa del fornitore:{" "}
+          <a
+            href="https://web3forms.com/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="font-bold text-terracotta-600 underline underline-offset-2 hover:text-terracotta-700"
+          >
+            web3forms.com
+          </a>
+          .
+        </p>
       </section>
     </>
   );

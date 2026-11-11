@@ -93,31 +93,26 @@ export default function ContattiPage() {
 
         <div>
           <ContactForm />
-          <p className="mt-4 px-2 text-xs leading-relaxed text-ink/60">
-            Il modulo non invia né archivia il messaggio sul sito. Dopo averlo
-            preparato, si apre WhatsApp: potrai rileggerlo e inviarlo tu. Per
-            proteggere la tua riservatezza, evita di inserire dettagli sanitari
-            non necessari.
-          </p>
         </div>
 
         <section id="privacy" className="mt-10 pt-8 border-t border-sage-900/5">
           <SectionHeading eyebrow="Privacy" title="Informativa privacy" />
           <p className="mt-4 text-sm leading-relaxed text-ink/70 max-w-xl">
-            Il modulo di contatto non invia né archivia dati sul sito: prepara
-            un messaggio e lo apre in WhatsApp, dove puoi rileggerlo prima di
-            inviarlo. WhatsApp è un soggetto terzo: per questo ti chiediamo di
-            non inserire dettagli sanitari non necessari nella prima richiesta.
+            Il modulo di contatto trasmette nome, email, telefono (facoltativo)
+            e messaggio alla mia casella email tramite Web3Forms, un servizio di
+            terze parti che inoltra le submission per email. Il sito non
+            archivia i dati del modulo e non imposta cookie di tracciamento di
+            terze parti. Per proteggere la tua riservatezza, evita di inserire
+            dettagli sanitari non necessari nella prima richiesta.
           </p>
           <p className="mt-3 text-sm leading-relaxed text-ink/70">
-            I dati che inserisci (nome, telefono facoltativo, messaggio)
-            restano sul tuo dispositivo finché non decidi di inviare la chat.
-            Non usiamo cookie di tracciamento di terze parti.
+            I dati che inserisci vengono trattati per rispondere alla tua
+            richiesta e fissare un appuntamento. Puoi accedere, rettificare,
+            cancellare o limitare il trattamento, e opporti in qualsiasi
+            momento: scrivimi su WhatsApp o chiama direttamente lo studio.
           </p>
           <p className="mt-3 text-xs text-ink/50">
-            Informativa completa in pubblicazione. Per esercitare i tuoi
-            diritti o chiedere la cancellazione, scrivimi su WhatsApp o chiama
-            direttamente lo studio.
+            Informativa completa: <a href="/privacy">Privacy · Perinea</a>.
           </p>
         </section>
       </section>
