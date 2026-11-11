@@ -10,6 +10,7 @@ import Footer from "@/components/footer";
 import { site } from "@/lib/site";
 import JsonLd from "@/components/json-ld";
 import { organizationSchema } from "@/lib/schema";
+import { Analytics } from "@vercel/analytics/next";
 
 export const metadata: Metadata = {
   metadataBase: new URL(site.url),
@@ -66,6 +67,7 @@ export default function RootLayout({
         <Header />
         <main className="flex-1" id="main">{children}</main>
         <Footer />
+        <Analytics />
       </body>
     </html>
   );
