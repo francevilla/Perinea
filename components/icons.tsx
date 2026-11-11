@@ -125,3 +125,11 @@ export function IconWhatsApp({ className }: IconProps) {
     </svg>
   );
 }
+
+export function IconMail({ className }: IconProps) {
+  return (
+    <StrokeIcon className={className}>
+      <path d="M3 7.5v9a.75.75 0 0 0 .75.75h15a.75.75 0 0 0 .75-.75v-9M3 7.5l6.624 4.286c.129.083.276.138.438.18q.404.107.824.18l.093.018.095-.018q.418-.073.823-.18c.162-.042.309-.097.438-.18L21 7.5" />
+    </StrokeIcon>
+  );
+}
