@@ -85,6 +85,25 @@ export default function PrivacyPage() {
           </a>
           .
         </p>
+
+        <h2 className="font-serif text-2xl font-semibold text-sage-900 mb-6 mt-10">
+          Statistica del sito
+        </h2>
+        <p className="mb-4 text-sm leading-relaxed text-ink/75">
+          Questo sito usa Vercel Web Analytics per contare le visite alle
+          pagine. Il servizio non usa cookie — né di terze parti né propri — e
+          non raccoglie indirizzi IP né altri dati personali: i visitatori
+          vengono identificati con un hash della richiesta, scartato dopo 24
+          ore. I dati raccolti (URL di visita, referrer, geolocalizzazione a
+          livello di città, sistema operativo, browser e tipo di dispositivo)
+          sono usati solo in forma aggregata.
+        </p>
+        <p className="mb-4 text-sm leading-relaxed text-ink/75">
+          La pagina di ringraziamento dopo l’invio del modulo
+          <code>/grazie</code> non viene indicizzata dai motori di ricerca e
+          non contiene i tuoi dati: serve solo a contare quante richieste
+          arrivano tramite il modulo di contatto.
+        </p>
       </section>
     </>
   );
