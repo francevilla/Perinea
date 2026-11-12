@@ -205,7 +205,7 @@ export default function HomePage() {
               icon={service.icon}
               title={service.title}
               description={service.description}
-              href={`/servizi#${service.group}`}
+              href="/servizi"
             />
           ))}
         </div>
