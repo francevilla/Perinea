@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { navLinks, site } from "@/lib/site";
 import { LogoMark } from "./logo";
-import { IconMapPin, IconPhone, IconWhatsApp } from "./icons";
+import { IconMapPin, IconMail } from "./icons";
 
 export default function Footer() {
   const year = new Date().getFullYear();
@@ -26,22 +26,13 @@ export default function Footer() {
             {site.tagline} {site.bookingNote}
           </p>
           <div className="mt-6 flex flex-wrap gap-3">
-            <a
-              href={site.phoneHref}
+            <Link
+              href="/contatti"
               className="inline-flex items-center gap-2 rounded-full bg-terracotta-700 px-5 py-2.5 text-sm font-bold text-white transition hover:bg-terracotta-800"
             >
-              <IconPhone className="h-4 w-4" />
-              {site.phone}
-            </a>
-            <a
-              href={site.whatsappHref}
-              target="_blank"
-              rel="noreferrer"
-              className="inline-flex items-center gap-2 rounded-full border border-cream/30 px-5 py-2.5 text-sm font-bold text-cream transition hover:bg-cream/10"
-            >
-              <IconWhatsApp className="h-4 w-4" />
-              WhatsApp
-            </a>
+              <IconMail className="h-4 w-4" />
+              Scrivimi tramite il modulo
+            </Link>
           </div>
         </div>
 

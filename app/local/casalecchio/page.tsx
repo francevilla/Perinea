@@ -1,9 +1,10 @@
 import type { Metadata } from "next";
+import Link from "next/link";
 import { site } from "@/lib/site";
 import Breadcrumb from "@/components/breadcrumb";
 import SectionHeading from "@/components/section-heading";
 import CtaBanner from "@/components/cta-banner";
-import { IconArrowRight, IconMapPin, IconPhone, IconWhatsApp } from "@/components/icons";
+import { IconArrowRight, IconMapPin, IconMail } from "@/components/icons";
 import JsonLd from "@/components/json-ld";
 import { organizationSchema } from "@/lib/schema";
 
@@ -113,34 +114,13 @@ export default function LocalCasalecchioPage() {
           </div>
 
           <div className="card p-6 sm:p-8">
-            <div className="flex items-start gap-4">
-              <span className="mt-0.5 inline-flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-sage-100 text-sage-700">
-                <IconPhone className="h-6 w-6" />
-              </span>
-              <div>
-                <h3 className="font-serif text-xl font-semibold text-sage-900">
-                  Telefono
-                </h3>
-                <a
-                  href={site.phoneHref}
-                  className="font-serif text-2xl font-semibold text-sage-900 transition hover:text-terracotta-600"
-                >
-                  {site.phone}
-                </a>
-                <p className="mt-1 text-sm text-muted">
-                  Ricevo su appuntamento
-                </p>
-              </div>
-            </div>
-            <a
-              href={site.whatsappHref}
-              target="_blank"
-              rel="noreferrer"
-              className="btn-accent shrink-0"
+            <Link
+              href="/contatti"
+              className="inline-flex w-full items-center justify-center gap-2 rounded-full bg-terracotta-700 px-5 py-2.5 text-sm font-bold text-white transition hover:bg-terracotta-800"
             >
-              <IconWhatsApp className="h-4 w-4" />
-              Scrivi su WhatsApp
-            </a>
+              <IconMail className="h-4 w-4" />
+              Scrivimi tramite il modulo
+            </Link>
           </div>
         </div>
 
@@ -160,7 +140,7 @@ export default function LocalCasalecchioPage() {
 
           <CtaBanner
             title="Prenota a Casalecchio di Reno"
-            text="Chiamami o scrivimi su WhatsApp per fissare il tuo primo colloquio presso la clinica Native Medica."
+            text="Contattami tramite il modulo per fissare il tuo primo colloquio presso la clinica Native Medica."
           />
         </div>
       </section>
@@ -176,14 +156,13 @@ export default function LocalCasalecchioPage() {
             percorso più adatto, senza impegno.
           </p>
           <div className="flex flex-col sm:flex-row justify-center gap-4">
-            <a href={site.phoneHref} className="btn-accent">
-              <IconPhone className="h-4 w-4" />
-              Chiamami
-            </a>
-            <a href={site.whatsappHref} target="_blank" rel="noreferrer" className="btn-outline">
-              <IconWhatsApp className="h-4 w-4" />
-              WhatsApp
-            </a>
+            <Link
+              href="/contatti"
+              className="inline-flex items-center justify-center gap-2 rounded-full bg-terracotta-700 px-5 py-2.5 text-sm font-bold text-white transition hover:bg-terracotta-800"
+            >
+              <IconMail className="h-4 w-4" />
+              Scrivimi tramite il modulo
+            </Link>
           </div>
         </div>
       </section>

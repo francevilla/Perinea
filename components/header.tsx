@@ -5,7 +5,7 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { navLinks, site } from "@/lib/site";
 import { LogoMark } from "./logo";
-import { IconMenu, IconPhone, IconX } from "./icons";
+import { IconMail, IconMenu, IconX } from "./icons";
 
 export default function Header() {
   const pathname = usePathname();
@@ -66,11 +66,11 @@ export default function Header() {
             </Link>
           ))}
           <a
-            href={site.phoneHref}
+            href="/contatti"
             className="inline-flex h-11 items-center justify-center gap-2 rounded-full bg-sage-700 px-5 text-sm font-bold text-cream transition hover:bg-sage-800"
           >
-            <IconPhone className="h-4 w-4" />
-            {site.phone}
+            <IconMail className="h-4 w-4" />
+            Scrivimi tramite il modulo
           </a>
         </nav>
 
@@ -114,11 +114,11 @@ export default function Header() {
           ))}
         </ul>
         <a
-          href={site.phoneHref}
+          href="/contatti"
           className="mt-4 inline-flex h-11 w-full items-center justify-center gap-2 rounded-full bg-sage-700 px-5 text-sm font-bold text-cream"
         >
-          <IconPhone className="h-4 w-4" />
-          Chiamami · {site.phone}
+          <IconMail className="h-4 w-4" />
+          Scrivimi tramite il modulo
         </a>
       </nav>
     </header>

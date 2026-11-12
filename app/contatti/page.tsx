@@ -4,17 +4,13 @@ import AddressCard from "@/components/address-card";
 import ContactForm from "@/components/contact-form";
 import SectionHeading from "@/components/section-heading";
 import Breadcrumb from "@/components/breadcrumb";
-import {
-  IconClock,
-  IconPhone,
-  IconWhatsApp,
-} from "@/components/icons";
+import { IconClock } from "@/components/icons";
 
 export const metadata: Metadata = {
   title: "Contatti e prenotazioni | Ostetrica a Casalecchio",
   alternates: { canonical: "/contatti" },
   description:
-    "Chiamami o scrivimi su WhatsApp per prenotare una visita ostetrica o di riabilitazione del pavimento pelvico a Casalecchio e San Lazzaro.",
+    "Contattami tramite il modulo per prenotare una visita ostetrica o di riabilitazione del pavimento pelvico a Casalecchio e San Lazzaro.",
 };
 
 export default function ContattiPage() {
@@ -24,7 +20,7 @@ export default function ContattiPage() {
         <SectionHeading
           eyebrow="Contatti"
           title="Sono qui per ascoltarti"
-          description="Chiamami, scrivimi su WhatsApp o usa il modulo: rispondo personalmente a ogni messaggio."
+          description="Usa il modulo per contattarmi: rispondo personalmente a ogni messaggio."
           level={1}
         />
       </section>
@@ -39,45 +35,6 @@ export default function ContattiPage() {
       <section className="container-site grid gap-8 py-14 sm:py-20 lg:grid-cols-2">
         <div className="space-y-6">
           <div className="card p-6 sm:p-8">
-            <div className="flex flex-col gap-5 sm:flex-row sm:items-center sm:justify-between">
-              <div className="flex items-center gap-4">
-                <span className="inline-flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-sage-100 text-sage-700">
-                  <IconPhone className="h-6 w-6" />
-                </span>
-                <div>
-                  <p className="text-xs font-bold uppercase tracking-wider text-ink/50">
-                    Telefono
-                  </p>
-                  <a
-                    href={site.phoneHref}
-                    className="font-serif text-2xl font-semibold text-sage-900 transition hover:text-terracotta-600"
-                  >
-                    {site.phone}
-                  </a>
-                </div>
-                <p className="text-xs text-muted">Orari: {site.bookingHours}</p>
-                {site.schedulingUrl && (
-                  <a
-                    href={site.schedulingUrl}
-                    target="_blank"
-                    rel="noreferrer"
-                    className="mt-2 inline-flex items-center justify-center gap-2 rounded-full border-2 border-sage-700 px-5 py-2.5 text-sm font-bold text-sage-800 transition hover:bg-sage-700 hover:text-cream"
-                  >
-                    <IconClock className="h-4 w-4" />
-                    Prenota online
-                  </a>
-                )}
-              </div>
-              <a
-                href={site.whatsappHref}
-                target="_blank"
-                rel="noreferrer"
-                className="btn-accent shrink-0"
-              >
-                <IconWhatsApp className="h-4 w-4" />
-                WhatsApp
-              </a>
-            </div>
             <p className="mt-5 flex items-start gap-2.5 rounded-2xl bg-sand/80 px-4 py-3 text-base leading-relaxed text-meta">
               <IconClock className="mt-0.5 h-4 w-4 shrink-0 text-terracotta-600" />
               {site.bookingNote} Pagamenti accettati: {site.payment.join(", ")}.
@@ -109,7 +66,7 @@ export default function ContattiPage() {
             I dati che inserisci vengono trattati per rispondere alla tua
             richiesta e fissare un appuntamento. Puoi accedere, rettificare,
             cancellare o limitare il trattamento, e opporti in qualsiasi
-            momento: scrivimi su WhatsApp o chiama direttamente lo studio.
+            momento: scrivimi tramite il modulo dei contatti.
           </p>
           <p className="mt-3 text-xs text-ink/50">
             Informativa completa: <a href="/privacy">Privacy · Perinea</a>.

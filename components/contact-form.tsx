@@ -1,9 +1,8 @@
 "use client";
 
 import { useCallback, useRef, useState } from "react";
-import { site } from "@/lib/site";
 import { buildPayload, submitWeb3Form } from "@/lib/web3forms";
-import { IconCheck, IconMail, IconWhatsApp } from "./icons";
+import { IconCheck, IconMail } from "./icons";
 
 type FormState = "idle" | "submitting" | "success" | "error";
 
@@ -78,18 +77,7 @@ export default function ContactForm() {
             Grazie, ho ricevuto il tuo messaggio. Ti risponderò al più presto
             all’indirizzo email che hai indicato.
           </p>
-          <p className="mt-3 text-sm leading-relaxed text-ink/70">
-            Preferisci scriverci subito? Apri{" "}
-            <a
-              href={site.whatsappHref}
-              target="_blank"
-              rel="noreferrer"
-              className="font-bold text-terracotta-600 underline underline-offset-2 hover:text-terracotta-700"
-            >
-              la chat WhatsApp
-            </a>{" "}
-            con un messaggio già preparato.
-          </p>
+
         </>
       ) : (
         <>
@@ -222,21 +210,7 @@ export default function ContactForm() {
                 className="mt-2 rounded-2xl bg-sand px-4 py-3 text-sm leading-relaxed text-ink/80"
               >
                 {errorMessage || "Riprova più tardi."}
-                {!errorMessage.includes("Rete") && (
-                  <>
-                    <br />
-                    Oppure scrivimi direttamente su{" "}
-                    <a
-                      href={site.whatsappHref}
-                      target="_blank"
-                      rel="noreferrer"
-                      className="font-bold text-terracotta-600 underline underline-offset-2 hover:text-terracotta-700"
-                    >
-                      WhatsApp
-                    </a>
-                    .
-                  </>
-                )}
+
               </p>
             )}
 
