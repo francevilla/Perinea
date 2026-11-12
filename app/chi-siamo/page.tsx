@@ -195,7 +195,7 @@ export default function ChiSiamoPage() {
 
       <nav aria-label="Pagine correlate" className="mt-10 flex flex-wrap gap-3">
         <Link href="/servizi" className="btn-outline">
-          Servizi e prezzi
+          Servizi
         </Link>
         <Link href="/contatti" className="btn-outline">
           Contatti e prenotazioni
