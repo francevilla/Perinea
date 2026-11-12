@@ -7,8 +7,7 @@ import ServiceCard from "@/components/service-card";
 import {
   IconArrowRight,
   IconCheck,
-  IconPhone,
-  IconWhatsApp,
+  IconMail,
 } from "@/components/icons";
 
 const highlights = [
@@ -91,14 +90,13 @@ export default function HomePage() {
               . Ricevo a Casalecchio di Reno e San Lazzaro di Savena.
             </p>
             <div className="mt-8 flex flex-wrap gap-4">
-              <a href={site.whatsappHref} className="btn-accent">
-                <IconWhatsApp className="h-4 w-4" />
-                Scrivimi su WhatsApp
-              </a>
-              <a href={site.phoneHref} className="btn-outline">
-                <IconPhone className="h-4 w-4" />
-                {site.phone}
-              </a>
+              <Link
+                href="/contatti"
+                className="inline-flex items-center justify-center gap-2 rounded-full bg-terracotta-700 px-5 py-2.5 text-sm font-bold text-white transition hover:bg-terracotta-800"
+              >
+                <IconMail className="h-4 w-4" />
+                Scrivimi tramite il modulo
+              </Link>
               <Link
                 href="#prima-visita"
                 className="text-sm font-bold text-terracotta-600 underline underline-offset-2 transition hover:text-terracotta-700"

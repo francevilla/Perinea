@@ -5,7 +5,7 @@ import { site } from "@/lib/site";
 import CtaBanner from "@/components/cta-banner";
 import SectionHeading from "@/components/section-heading";
 import Breadcrumb from "@/components/breadcrumb";
-import { IconCheck, IconPhone } from "@/components/icons";
+import { IconCheck } from "@/components/icons";
 
 export const metadata: Metadata = {
   title: "Chi sono | Dott.ssa Isabel Lombardini, ostetrica · Perinea",
@@ -122,12 +122,8 @@ export default function ChiSiamoPage() {
               all&apos;allattamento.
             </p>
             <div className="mt-8 flex flex-wrap gap-4">
-              <a href={site.phoneHref} className="btn-primary">
-                <IconPhone className="h-4 w-4" />
-                Chiamami · {site.phone}
-              </a>
               <Link href="/contatti" className="btn-outline">
-                Contattami
+                Contattami tramite il modulo
               </Link>
             </div>
           </div>

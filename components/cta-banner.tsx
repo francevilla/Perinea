@@ -1,5 +1,5 @@
-import { site } from "@/lib/site";
-import { IconPhone, IconWhatsApp } from "./icons";
+import Link from "next/link";
+import { IconMail } from "./icons";
 
 type CtaBannerProps = {
   title?: string;
@@ -8,7 +8,7 @@ type CtaBannerProps = {
 
 export default function CtaBanner({
   title = "Pronta a iniziare il tuo percorso?",
-  text = "Chiamami o scrivimi su WhatsApp: insieme troveremo il momento e il percorso giusti per te.",
+  text = "Contattami tramite il modulo: insieme troveremo il momento e il percorso giusti per te.",
 }: CtaBannerProps) {
   return (
     <section className="container-site pb-16 sm:pb-24">
@@ -29,19 +29,13 @@ export default function CtaBanner({
             {text}
           </p>
           <div className="mt-8 flex flex-wrap items-center justify-center gap-4">
-            <a href={site.phoneHref} className="btn-accent">
-              <IconPhone className="h-4 w-4" />
-              Chiamami · {site.phone}
-            </a>
-            <a
-              href={site.whatsappHref}
-              target="_blank"
-              rel="noreferrer"
-              className="btn-ghost-light"
+            <Link
+              href="/contatti"
+              className="inline-flex items-center justify-center gap-2 rounded-full bg-terracotta-700 px-5 py-2.5 text-sm font-bold text-white transition hover:bg-terracotta-800"
             >
-              <IconWhatsApp className="h-4 w-4" />
-              Scrivi su WhatsApp
-            </a>
+              <IconMail className="h-4 w-4" />
+              Scrivimi tramite il modulo
+            </Link>
           </div>
         </div>
       </div>

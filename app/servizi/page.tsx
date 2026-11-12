@@ -3,13 +3,13 @@ import Link from "next/link";
 import { site } from "@/lib/site";
 import SectionHeading from "@/components/section-heading";
 import Breadcrumb from "@/components/breadcrumb";
-import { IconPhone, IconWhatsApp } from "@/components/icons";
+import { IconMail } from "@/components/icons";
 
 export const metadata: Metadata = {
   title: "Servizi in aggiornamento | Pavimento pelvico e ostetricia",
   alternates: { canonical: "/servizi" },
   description:
-    "Stiamo riorganizzando i percorsi di cura: servizi a domicilio e presso la clinica Native Medica. Torna presto per il nuovo listino. Prenota su MioDottore o contatta la Dott.ssa Isabel Lombardini.",
+    "Stiamo riorganizzando i percorsi di cura: servizi a domicilio e presso la clinica Native Medica. Torna presto per il nuovo listino. Per contatti usa il modulo nella pagina Contatti.",
 };
 
 export default function ServiziPage() {
@@ -43,16 +43,16 @@ export default function ServiziPage() {
           <ul className="mt-6 max-w-2xl space-y-3 text-sm leading-relaxed text-ink/80 sm:text-base sm:mt-8 sm:text-left">
             <li className="flex items-start gap-3">
               <span className="mt-0.5 inline-flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-sage-100 text-sage-700">
-                <IconPhone className="h-3 w-3" />
+                <IconMail className="h-3 w-3" />
               </span>
               <span>
-                <strong>Servizi a domicilio</strong> — prenotazione diretta con
-                la Dott.ssa.
+                <strong>Servizi a domicilio</strong> — contattami tramite il
+                modulo per fissare un appuntamento.
               </span>
             </li>
             <li className="flex items-start gap-3">
               <span className="mt-0.5 inline-flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-sage-100 text-sage-700">
-                <IconWhatsApp className="h-3 w-3" />
+                <IconMail className="h-3 w-3" />
               </span>
               <span>
                 <strong>Visite presso Native Medica</strong> — prenotazione
@@ -62,22 +62,13 @@ export default function ServiziPage() {
           </ul>
 
           <div className="mt-10 sm:mt-12 flex flex-col sm:flex-row sm:items-center gap-4 justify-center sm:justify-start">
-            <a
-              href={site.phoneHref}
+            <Link
+              href="/contatti"
               className="inline-flex h-11 w-full sm:w-auto items-center justify-center gap-2 rounded-full bg-terracotta-700 px-5 py-2.5 text-sm font-bold text-white transition hover:bg-terracotta-800"
             >
-              <IconPhone className="h-4 w-4" />
-              Chiamami
-            </a>
-            <a
-              href={site.whatsappHref}
-              target="_blank"
-              rel="noreferrer"
-              className="inline-flex h-11 w-full sm:w-auto items-center justify-center gap-2 rounded-full border-2 border-terracotta-700 px-5 py-2.5 text-sm font-bold text-terracotta-700 transition hover:bg-terracotta-50"
-            >
-              <IconWhatsApp className="h-4 w-4" />
-              WhatsApp
-            </a>
+              <IconMail className="h-4 w-4" />
+              Scrivimi tramite il modulo
+            </Link>
           </div>
         </div>
       </section>
